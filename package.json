@@ -4,11 +4,13 @@
   "description": "The Ruined Tower is a 2D platformer where the player is trying to reach the top of the tower, rumored to reach the land of the Gods and give godly power to anyone who can reach the top, but no one has survived the climb yet. This game will incorporate difficult physics that may change between areas of the tower to create a hard and entertaining game. The tower will make vertical progress with a checkpoint system that may be disabled for a harder variation of the game. Will you be able to reach the top of the ruined tower?",
   "main": "index.js",
   "scripts": {
+    "start": "parcel src/index.html -p 8000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "parcel-bundler": "^1.12.5"
+    "parcel-bundler": "^1.12.5",
+    "phaser": "^3.80.1"
   }
 }
