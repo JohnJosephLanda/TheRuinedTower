@@ -23,5 +23,9 @@ const game = new Phaser.Game(config)
 game.scene.add('titlescreen',TitleScreen)
 game.scene.add("game",Game)
 
+// this.load.image('player','src/images/player.png')
+// const playerTexture = new Phaser.Textures.Texture(new Phaser.Textures.TextureManager('game'),'playerIMG','player')
+// const player = new Phaser.GameObjects.Sprite('game',400,500)
+
 // game.scene.start('titlescreen')
 game.scene.start("game");

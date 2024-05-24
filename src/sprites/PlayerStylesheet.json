@@ -1,0 +1,170 @@
+{
+	"textures": [
+		{
+			"image": "PlayerStylesheet.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1704,
+				"h": 255
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "standingplayer.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 142,
+						"h": 255
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 142,
+						"h": 255
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 142,
+						"h": 255
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "jumpingplayer.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 142,
+						"h": 255
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 142,
+						"h": 255
+					},
+					"frame": {
+						"x": 142,
+						"y": 0,
+						"w": 142,
+						"h": 255
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "walkleftplayer1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 142,
+						"h": 255
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 142,
+						"h": 255
+					},
+					"frame": {
+						"x": 284,
+						"y": 0,
+						"w": 142,
+						"h": 255
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "walkleftplayer2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 142,
+						"h": 255
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 142,
+						"h": 255
+					},
+					"frame": {
+						"x": 426,
+						"y": 0,
+						"w": 142,
+						"h": 255
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "walkrightplayer1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 142,
+						"h": 255
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 142,
+						"h": 255
+					},
+					"frame": {
+						"x": 568,
+						"y": 0,
+						"w": 142,
+						"h": 255
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "walkrightplayer2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 142,
+						"h": 255
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 142,
+						"h": 255
+					},
+					"frame": {
+						"x": 710,
+						"y": 0,
+						"w": 142,
+						"h": 255
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:94145dcb778d7caaafd3c2885d36df9f:8d9b41b83bb54b8ea81b399f47e21ac0:b9a4291376fa7fc7b56c8e4b3b609f20$"
+	}
+}
