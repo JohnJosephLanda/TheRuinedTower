@@ -49,9 +49,5 @@ export default class Tower1 extends Phaser.Scene
         else {
             character.setAccelerationX(-character.velocity.x*4)
         }
-
-        if (character.x < 5) {
-            this.scene.pause()
-        }
     }
 }

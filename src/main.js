@@ -23,7 +23,7 @@ const game = new Phaser.Game(config)
 
 game.scene.add('titlescreen',TitleScreen)
 game.scene.add("startingPoint",Start)
-// game.scene.add("tower1",Tower1)
+game.scene.add("tower1",Tower1)
 
 // this.load.image('player','src/images/player.png')
 // const playerTexture = new Phaser.Textures.Texture(new Phaser.Textures.TextureManager('game'),'playerIMG','player')

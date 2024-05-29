@@ -69,5 +69,9 @@ export default class Start extends Phaser.Scene
         else {
             character.setAccelerationX(-character.velocity.x*4)
         }
+
+        if (character.x < 5) {
+            this.scene.start("tower1")
+        }
     }
 }
