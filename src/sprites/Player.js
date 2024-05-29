@@ -7,7 +7,10 @@ export default class Player extends Phaser.GameObjects.Sprite {
         config.scene.add.existing(this);
     }
 
-    normalPhysics() {
+    normalPhysics(cursors) {
+        this.cursors = cursors
+        let character = this.body
+        
         if (this.cursors.up.isDown && (character.onFloor())) {
             character.setVelocityY(-100)
         }
