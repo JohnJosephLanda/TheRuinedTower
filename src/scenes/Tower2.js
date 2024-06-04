@@ -103,7 +103,7 @@ export default class Tower2 extends Phaser.Scene
         this.physics.add.existing(this.ninthPlat, true)
         this.physics.add.collider(this.ninthPlat, this.ball)
 
-        this.tenthPlat = this.add.rectangle(300,150,70,10,this.imageColor)
+        this.tenthPlat = this.add.rectangle(320,150,50,10,this.imageColor)
         this.physics.add.existing(this.tenthPlat, true)
         this.physics.add.collider(this.tenthPlat, this.ball)
         
