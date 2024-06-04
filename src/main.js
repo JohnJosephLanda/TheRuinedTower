@@ -32,5 +32,5 @@ game.scene.add("tower2",Tower2)
 // const player = new Phaser.GameObjects.Sprite('game',400,500)
 
 // game.scene.start('titlescreen')
-// game.scene.start("startingPoint");
-game.scene.start("tower2"); // temp to work on level
+game.scene.start("startingPoint");
+// game.scene.start("tower2"); // temp to work on level
