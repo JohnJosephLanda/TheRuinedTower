@@ -12,7 +12,7 @@ const config = {
         default: 'arcade',
         arcade: {
             gravity: {
-                y: 200
+                y: 100
             },
             debug: true
         }
@@ -31,3 +31,4 @@ game.scene.add("tower1",Tower1)
 
 // game.scene.start('titlescreen')
 game.scene.start("startingPoint");
+// game.scene.start("tower1"); // temp to work on level

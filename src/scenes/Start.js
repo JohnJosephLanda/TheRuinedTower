@@ -17,7 +17,8 @@ export default class Start extends Phaser.Scene
         // player = new Player({
         //     scene: this,
         //     x: 400,
-        //     y: 400
+        //     y: 400,
+        //     img: 'player'
         // })
         // this.physics.add.existing(player)
         // player.body.setCollideWorldBounds(true, 0, 0)
