@@ -58,7 +58,7 @@ export default class Tower2 extends Phaser.Scene
         this.physics.add.collider(this.firstPlat, this.ball)
         
         // little speedrun skip for fun
-        this.skipPlat1 = this.add.rectangle(270,440,20,5,this.imageColor)
+        this.skipPlat1 = this.add.rectangle(280,440,20,5,this.imageColor)
         this.physics.add.existing(this.skipPlat1, true)
         this.physics.add.collider(this.skipPlat1, this.ball)
         
