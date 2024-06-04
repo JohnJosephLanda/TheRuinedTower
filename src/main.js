@@ -9,6 +9,7 @@ const config = {
     width: 800,
     height: 500,
     type: Phaser.AUTO,
+    backgroundColor: '#021668',
     physics: {
         default: 'arcade',
         arcade: {
@@ -32,5 +33,5 @@ game.scene.add("tower2_4",Tower2_4)
 // const player = new Phaser.GameObjects.Sprite('game',400,500)
 
 // game.scene.start('titlescreen')
-game.scene.start("startingPoint");
+game.scene.start("titlescreen");
 // game.scene.start("tower2_4"); // temp to work on level
