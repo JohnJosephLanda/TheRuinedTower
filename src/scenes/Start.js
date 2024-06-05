@@ -26,6 +26,10 @@ export default class Start extends Phaser.Scene
         this.ball = this.add.circle(600, 300, 7, 0xffffff)
         this.physics.add.existing(this.ball)
         this.ball.body.setCollideWorldBounds(true, 0, 0)
+        
+        this.topLeftWall = this.add.rectangle(50,150,100,300,0xffffff)
+        this.physics.add.existing(this.topLeftWall, true)
+        this.physics.add.collider(this.topLeftWall, this.ball)
 
         this.stair1 = this.add.rectangle(270,485,600,30,0xffffff)
         this.physics.add.existing(this.stair1, true)
@@ -46,6 +50,9 @@ export default class Start extends Phaser.Scene
         this.stair5 = this.add.rectangle(190,365,400,30,0xffffff)
         this.physics.add.existing(this.stair5, true)
         this.physics.add.collider(this.stair5, this.ball)
+
+        const text = this.add.text(200, 150, "Enter the Tower...if you dare", { font: "30px Arial",fill: 'white' })
+        const text2 = this.add.text(300, 200, "<-", { font: "50px Arial",fill: 'white' })
 
         this.cursors = this.input.keyboard.createCursorKeys()
     }
