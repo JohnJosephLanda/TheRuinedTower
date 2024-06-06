@@ -56,6 +56,26 @@ export default class Tower3 extends Phaser.Scene
         this.fourthPlat = this.add.rectangle(400,320,30,10,this.imageColor)
         this.physics.add.existing(this.fourthPlat, true)
         this.physics.add.collider(this.fourthPlat, this.ball)
+        
+        this.fifthPlat = this.add.rectangle(500,320,20,10,this.imageColor)
+        this.physics.add.existing(this.fifthPlat, true)
+        this.physics.add.collider(this.fifthPlat, this.ball)
+        
+        this.sixthPlat = this.add.rectangle(530,280,20,10,this.imageColor)
+        this.physics.add.existing(this.sixthPlat, true)
+        this.physics.add.collider(this.sixthPlat, this.ball)
+        
+        this.seventhPlat = this.add.rectangle(500,250,20,10,this.imageColor)
+        this.physics.add.existing(this.seventhPlat, true)
+        this.physics.add.collider(this.seventhPlat, this.ball)
+        
+        this.eigthPlat = this.add.rectangle(500,200,30,10,this.imageColor)
+        this.physics.add.existing(this.eigthPlat, true)
+        this.physics.add.collider(this.eigthPlat, this.ball)
+        
+        this.ninthPlat = this.add.rectangle(300,180,50,10,this.imageColor)
+        this.physics.add.existing(this.ninthPlat, true)
+        this.physics.add.collider(this.ninthPlat, this.ball)
 
         this.cursors = this.input.keyboard.createCursorKeys()
     }
@@ -81,10 +101,10 @@ export default class Tower3 extends Phaser.Scene
             character.setAccelerationX(-character.velocity.x*4)
         }
 
-        if (character.x > 795 && character.y < 250) {
+        if (character.x < 5 && character.y > 250) {
             this.scene.start("tower2_4")
         }
-        if (character.x > 795 && character.y > 250) {
+        if (character.x < 5 && character.y < 250) {
             this.scene.start("tower2_4from3")
         }
         if (character.y < 5) {
