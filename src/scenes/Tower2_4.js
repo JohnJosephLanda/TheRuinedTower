@@ -143,8 +143,11 @@ export default class Tower2_4 extends Phaser.Scene
             character.setAccelerationX(-character.velocity.x*4)
         }
 
-        if (character.x < 5) {
-            this.scene.start("tower1")
+        if (character.x > 785) {
+            this.scene.start("tower3")
+        }
+        if (character.y < 20) {
+            this.scene.start("tower5")
         }
         if (character.y > 480) {
             this.scene.start("tower1")
