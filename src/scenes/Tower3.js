@@ -44,6 +44,18 @@ export default class Tower3 extends Phaser.Scene
         this.firstPlat = this.add.rectangle(110,400,40,10,this.imageColor)
         this.physics.add.existing(this.firstPlat, true)
         this.physics.add.collider(this.firstPlat, this.ball)
+        
+        this.secondPlat = this.add.rectangle(270,400,30,10,this.imageColor)
+        this.physics.add.existing(this.secondPlat, true)
+        this.physics.add.collider(this.secondPlat, this.ball)
+        
+        this.thirdPlat = this.add.rectangle(350,360,30,10,this.imageColor)
+        this.physics.add.existing(this.thirdPlat, true)
+        this.physics.add.collider(this.thirdPlat, this.ball)
+        
+        this.fourthPlat = this.add.rectangle(400,320,30,10,this.imageColor)
+        this.physics.add.existing(this.fourthPlat, true)
+        this.physics.add.collider(this.fourthPlat, this.ball)
 
         this.cursors = this.input.keyboard.createCursorKeys()
     }
