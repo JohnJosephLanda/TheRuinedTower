@@ -38,5 +38,5 @@ game.scene.add("tower5",Tower5)
 // const playerTexture = new Phaser.Textures.Texture(new Phaser.Textures.TextureManager('game'),'playerIMG','player')
 // const player = new Phaser.GameObjects.Sprite('game',400,500)
 
-// game.scene.start("titlescreen");
-game.scene.start("tower5"); // temp to work on level
+game.scene.start("titlescreen");
+// game.scene.start("tower5"); // temp to work on level
