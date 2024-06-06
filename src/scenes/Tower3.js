@@ -73,9 +73,9 @@ export default class Tower3 extends Phaser.Scene
         this.physics.add.existing(this.eigthPlat, true)
         this.physics.add.collider(this.eigthPlat, this.ball)
         
-        this.ninthPlat = this.add.rectangle(300,180,50,10,this.imageColor)
-        this.physics.add.existing(this.ninthPlat, true)
-        this.physics.add.collider(this.ninthPlat, this.ball)
+        this.topPlat = this.add.rectangle(300,180,50,10,this.imageColor)
+        this.physics.add.existing(this.topPlat, true)
+        this.physics.add.collider(this.topPlat, this.ball)
 
         this.cursors = this.input.keyboard.createCursorKeys()
     }
@@ -104,7 +104,7 @@ export default class Tower3 extends Phaser.Scene
         if (character.x < 5 && character.y > 250) {
             this.scene.start("tower2_4")
         }
-        if (character.x < 5 && character.y < 250) {
+        else if (character.x < 5) {
             this.scene.start("tower2_4from3")
         }
         if (character.y < 5) {
