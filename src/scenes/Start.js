@@ -27,27 +27,29 @@ export default class Start extends Phaser.Scene
         this.physics.add.existing(this.ball)
         this.ball.body.setCollideWorldBounds(true, 0, 0)
         
-        this.topLeftWall = this.add.rectangle(50,150,100,300,0xffffff)
+        this.imageColor = 0xffffff
+        
+        this.topLeftWall = this.add.rectangle(50,150,100,300,this.imageColor)
         this.physics.add.existing(this.topLeftWall, true)
         this.physics.add.collider(this.topLeftWall, this.ball)
 
-        this.stair1 = this.add.rectangle(270,485,600,30,0xffffff)
+        this.stair1 = this.add.rectangle(270,485,600,30,this.imageColor)
         this.physics.add.existing(this.stair1, true)
         this.physics.add.collider(this.stair1, this.ball)
 
-        this.stair2 = this.add.rectangle(250,455,550,30,0xffffff)
+        this.stair2 = this.add.rectangle(250,455,550,30,this.imageColor)
         this.physics.add.existing(this.stair2, true)
         this.physics.add.collider(this.stair2, this.ball)
 
-        this.stair3 = this.add.rectangle(230,425,500,30,0xffffff)
+        this.stair3 = this.add.rectangle(230,425,500,30,this.imageColor)
         this.physics.add.existing(this.stair3, true)
         this.physics.add.collider(this.stair3, this.ball)
 
-        this.stair4 = this.add.rectangle(210,395,450,30,0xffffff)
+        this.stair4 = this.add.rectangle(210,395,450,30,this.imageColor)
         this.physics.add.existing(this.stair4, true)
         this.physics.add.collider(this.stair4, this.ball)
 
-        this.stair5 = this.add.rectangle(190,365,400,30,0xffffff)
+        this.stair5 = this.add.rectangle(190,365,400,30,this.imageColor)
         this.physics.add.existing(this.stair5, true)
         this.physics.add.collider(this.stair5, this.ball)
 

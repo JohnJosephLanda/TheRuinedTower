@@ -23,7 +23,7 @@ export default class Tower1 extends Phaser.Scene
         // this.physics.add.existing(player)
         // player.body.setCollideWorldBounds(true, 0, 0)
 
-        this.ball = this.add.circle(794, 350, 7, 0xffffff)
+        this.ball = this.add.circle(784, 360, 7, 0xffffff)
         this.physics.add.existing(this.ball)
         this.ball.body.setCollideWorldBounds(true, 0, 0)
 
@@ -109,8 +109,8 @@ export default class Tower1 extends Phaser.Scene
             character.setAccelerationX(-character.velocity.x*4)
         }
 
-        if (character.x > 790) {
-            this.scene.start("startingPoint")
+        if (character.x > 785) {
+            this.scene.start("startingPointfrom1")
         }
         if (character.y < 5) {
             this.scene.start("tower2_4")
