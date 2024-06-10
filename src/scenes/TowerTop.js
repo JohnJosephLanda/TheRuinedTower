@@ -73,11 +73,11 @@ export default class TowerTop extends Phaser.Scene
             character.setAccelerationX(-character.velocity.x*4)
         }
 
-        if (character.x < 10) {
+        if (character.x < 5) {
             this.scene.start("tower5fromtop")
         }
         if (character.y < 20) {
-            this.scene.start("end")
+            this.scene.start("endingPoint")
         }
     }
 }
