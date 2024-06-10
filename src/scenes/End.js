@@ -23,7 +23,7 @@ export default class End extends Phaser.Scene
         // this.physics.add.existing(player)
         // player.body.setCollideWorldBounds(true, 0, 0)
 
-        this.ball = this.add.circle(600, 300, 7, 0xffffff)
+        this.ball = this.add.circle(210,450, 7, 0xffffff)
         this.physics.add.existing(this.ball)
         this.ball.body.setCollideWorldBounds(true, 0, 0)
         
@@ -37,12 +37,12 @@ export default class End extends Phaser.Scene
         this.physics.add.existing(this.secondPlat, true)
         this.physics.add.collider(this.secondPlat, this.ball)
         
-        this.endPlat = this.add.rectangle(400,390,100,20,this.imageColor)
-        this.physics.add.existing(this.base, true)
-        this.physics.add.collider(this.base, this.ball)
+        this.endPlat = this.add.rectangle(500,420,400,20,this.imageColor)
+        this.physics.add.existing(this.endPlat, true)
+        this.physics.add.collider(this.endPlat, this.ball)
 
-        const text = this.add.text(200, 150, "Congratulations.", { font: "50px Arial",fill: 'white' })
-        const text2 = this.add.text(300, 150, "You have beaten the tower.", { font: "30px Arial",fill: 'white' })
+        const text = this.add.text(100, 100, "Congratulations.", { font: "50px Arial",fill: 'white' })
+        const text2 = this.add.text(300, 250, "You have beaten the tower.", { font: "30px Arial",fill: 'white' })
 
         this.cursors = this.input.keyboard.createCursorKeys()
     }
@@ -68,8 +68,8 @@ export default class End extends Phaser.Scene
             character.setAccelerationX(-character.velocity.x*4)
         }
 
-        if (character.x < 5) {
-            this.scene.start("tower5")
+        if (character.y > 485) {
+            this.scene.start("towertop")
         }
     }
 }
