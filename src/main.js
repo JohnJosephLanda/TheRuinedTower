@@ -11,6 +11,7 @@ import Tower5 from './scenes/NormalTower/Tower5'
 import Tower5fromTop from './scenes/NormalTower/Tower5fromTop'
 import TowerTop from './scenes/NormalTower/TowerTop'
 import End from './scenes/NormalTower/End'
+import Pause from './scenes/Pause'
 
 // var audio = new Audio("../media/badGuyHere.wav");
 // audio.muted = true;
@@ -45,6 +46,7 @@ game.scene.add("tower5",Tower5)
 game.scene.add("tower5fromtop",Tower5fromTop)
 game.scene.add("towertop",TowerTop)
 game.scene.add("endingPoint",End)
+game.scene.add("pauseScreen",Pause)
 
 // this.load.image('player','src/images/player.png')
 // const playerTexture = new Phaser.Textures.Texture(new Phaser.Textures.TextureManager('game'),'playerIMG','player')

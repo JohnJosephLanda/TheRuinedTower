@@ -83,5 +83,8 @@ export default class Start extends Phaser.Scene
         if (character.x < 5) {
             this.scene.start("tower1")
         }
+
+        this.scene.pause("startingPoint");
+        this.scene.launch("pauseScreen");
     }
 }
