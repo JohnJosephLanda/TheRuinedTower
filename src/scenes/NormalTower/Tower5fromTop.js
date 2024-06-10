@@ -1,8 +1,8 @@
 import Phaser from "phaser"
 
-import Player from "../sprites/Player"
+import Player from "../../sprites/Player"
 
-export default class Tower5 extends Phaser.Scene
+export default class Tower5fromTop extends Phaser.Scene
 {
     // player;
     preload()
@@ -23,7 +23,7 @@ export default class Tower5 extends Phaser.Scene
         // this.physics.add.existing(player)
         // player.body.setCollideWorldBounds(true, 0, 0)
 
-        this.ball = this.add.circle(120,470,7,0xffffff)
+        this.ball = this.add.circle(780,90,7,0xffffff)
         this.physics.add.existing(this.ball)
         this.ball.body.setCollideWorldBounds(true, 0, 0)
 

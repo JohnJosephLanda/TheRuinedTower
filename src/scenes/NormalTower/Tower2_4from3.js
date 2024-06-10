@@ -1,6 +1,6 @@
 import Phaser from "phaser"
 
-import Player from "../sprites/Player"
+import Player from "../../sprites/Player"
 
 export default class Tower2_4from3 extends Phaser.Scene
 {

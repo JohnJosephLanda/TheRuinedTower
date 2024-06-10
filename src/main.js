@@ -1,16 +1,16 @@
 import Phaser from 'phaser'
 
-import TitleScreen from './scenes/TitleScreen'
-import Start from './scenes/Start'
-import Startfrom1 from './scenes/Startfrom1'
-import Tower1 from './scenes/Tower1'
-import Tower2_4 from './scenes/Tower2_4'
-import Tower3 from './scenes/Tower3'
-import Tower2_4from3 from './scenes/Tower2_4from3'
-import Tower5 from './scenes/Tower5'
-import Tower5fromTop from './scenes/Tower5fromTop'
-import TowerTop from './scenes/TowerTop'
-import End from './scenes/End'
+import TitleScreen from './scenes/NormalTower/TitleScreen'
+import Start from './scenes/NormalTower/Start'
+import Startfrom1 from './scenes/NormalTower/Startfrom1'
+import Tower1 from './scenes/NormalTower/Tower1'
+import Tower2_4 from './scenes/NormalTower/Tower2_4'
+import Tower3 from './scenes/NormalTower/Tower3'
+import Tower2_4from3 from './scenes/NormalTower/Tower2_4from3'
+import Tower5 from './scenes/NormalTower/Tower5'
+import Tower5fromTop from './scenes/NormalTower/Tower5fromTop'
+import TowerTop from './scenes/NormalTower/TowerTop'
+import End from './scenes/NormalTower/End'
 
 // var audio = new Audio("../media/badGuyHere.wav");
 // audio.muted = true;

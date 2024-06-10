@@ -1,8 +1,8 @@
 import Phaser from "phaser"
 
-import Player from "../sprites/Player"
+import Player from "../../sprites/Player"
 
-export default class Startfrom1 extends Phaser.Scene
+export default class Start extends Phaser.Scene
 {
     // player;
     preload()
@@ -23,7 +23,7 @@ export default class Startfrom1 extends Phaser.Scene
         // this.physics.add.existing(player)
         // player.body.setCollideWorldBounds(true, 0, 0)
 
-        this.ball = this.add.circle(20, 340, 7, 0xffffff)
+        this.ball = this.add.circle(600, 300, 7, 0xffffff)
         this.physics.add.existing(this.ball)
         this.ball.body.setCollideWorldBounds(true, 0, 0)
         
@@ -53,8 +53,8 @@ export default class Startfrom1 extends Phaser.Scene
         this.physics.add.existing(this.stair5, true)
         this.physics.add.collider(this.stair5, this.ball)
 
-        const text = this.add.text(200, 150, "Enter the Tower...if you dare", { font: "30px Arial",fill: 'white' })
-        const text2 = this.add.text(300, 200, "←", { font: "50px Arial",fill: 'white' })
+        const text = this.add.text(200, 150, "Enter the Tower ... if you dare 😈", { font: "30px Fantasy",fill: 'white' })
+        const text2 = this.add.text(300, 200, "←", { font: "50px Fantasy",fill: 'white' })
 
         this.cursors = this.input.keyboard.createCursorKeys()
     }
