@@ -10,6 +10,10 @@ import Tower2_4from3 from './scenes/Tower2_4from3'
 import Tower5 from './scenes/Tower5'
 import TowerTop from './scenes/TowerTop'
 
+// var audio = new Audio("../media/badGuyHere.wav");
+// audio.muted = true;
+// audio.play();
+
 const config = {
     width: 800,
     height: 500,

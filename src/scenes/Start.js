@@ -53,8 +53,8 @@ export default class Start extends Phaser.Scene
         this.physics.add.existing(this.stair5, true)
         this.physics.add.collider(this.stair5, this.ball)
 
-        const text = this.add.text(200, 150, "Enter the Tower...if you dare", { font: "30px Arial",fill: 'white' })
-        const text2 = this.add.text(300, 200, "<-", { font: "50px Arial",fill: 'white' })
+        const text = this.add.text(200, 150, "Enter the Tower ... if you dare 😈", { font: "30px Fantasy",fill: 'white' })
+        const text2 = this.add.text(300, 200, "←", { font: "50px Fantasy",fill: 'white' })
 
         this.cursors = this.input.keyboard.createCursorKeys()
     }
