@@ -2,7 +2,7 @@ import Phaser from "phaser"
 
 import Player from "../sprites/Player"
 
-export default class Tower1 extends Phaser.Scene
+export default class Tower5 extends Phaser.Scene
 {
     // player;
     preload()

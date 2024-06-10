@@ -8,6 +8,7 @@ import Tower2_4 from './scenes/Tower2_4'
 import Tower3 from './scenes/Tower3'
 import Tower2_4from3 from './scenes/Tower2_4from3'
 import Tower5 from './scenes/Tower5'
+import TowerTop from './scenes/TowerTop'
 
 const config = {
     width: 800,
@@ -35,10 +36,11 @@ game.scene.add("tower2_4",Tower2_4)
 game.scene.add("tower3",Tower3)
 game.scene.add("tower2_4from3",Tower2_4from3)
 game.scene.add("tower5",Tower5)
+game.scene.add("towertop",TowerTop)
 
 // this.load.image('player','src/images/player.png')
 // const playerTexture = new Phaser.Textures.Texture(new Phaser.Textures.TextureManager('game'),'playerIMG','player')
 // const player = new Phaser.GameObjects.Sprite('game',400,500)
 
 game.scene.start("titlescreen");
-// game.scene.start("tower3"); // temp to work on level
+// game.scene.start("towertop"); // temp to work on level
