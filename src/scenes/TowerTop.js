@@ -23,19 +23,31 @@ export default class TowerTop extends Phaser.Scene
         // this.physics.add.existing(player)
         // player.body.setCollideWorldBounds(true, 0, 0)
 
-        this.ball = this.add.circle(120,470,7,0xffffff)
+        this.ball = this.add.circle(20,90,7,0xffffff)
         this.physics.add.existing(this.ball)
         this.ball.body.setCollideWorldBounds(true, 0, 0)
 
         this.imageColor = 0xffffff
         
-        this.leftWall = this.add.rectangle(50,200,100,400,this.imageColor)
+        this.leftWall = this.add.rectangle(50,300,100,400,this.imageColor)
         this.physics.add.existing(this.leftWall, true)
         this.physics.add.collider(this.leftWall, this.ball)
 
-        this.firstPlat = this.add.rectangle(150,300,50,20,this.imageColor)
+        this.firstPlat = this.add.rectangle(130,90,50,20,this.imageColor)
         this.physics.add.existing(this.firstPlat, true)
         this.physics.add.collider(this.firstPlat, this.ball)
+
+        this.secondPlat = this.add.rectangle(170,70,50,20,this.imageColor)
+        this.physics.add.existing(this.secondPlat, true)
+        this.physics.add.collider(this.secondPlat, this.ball)
+
+        this.thirdPlat = this.add.rectangle(210,50,50,20,this.imageColor)
+        this.physics.add.existing(this.thirdPlat, true)
+        this.physics.add.collider(this.thirdPlat, this.ball)
+
+        this.fourthPlat = this.add.rectangle(250,30,50,20,this.imageColor)
+        this.physics.add.existing(this.fourthPlat, true)
+        this.physics.add.collider(this.fourthPlat, this.ball)
         
         this.cursors = this.input.keyboard.createCursorKeys()
     }
@@ -61,14 +73,11 @@ export default class TowerTop extends Phaser.Scene
             character.setAccelerationX(-character.velocity.x*4)
         }
 
-        if (character.x > 790) {
-            this.scene.start("startingPoint")
+        if (character.x < 10) {
+            this.scene.start("tower5fromtop")
         }
-        if (character.y > 485 & character.x > 575) {
-            this.scene.start("tower2_4from3")
-        }
-        else if (character.y > 485) {
-            this.scene.start("tower2_4")
+        if (character.y < 20) {
+            this.scene.start("end")
         }
     }
 }

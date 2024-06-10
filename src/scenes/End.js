@@ -2,7 +2,7 @@ import Phaser from "phaser"
 
 import Player from "../sprites/Player"
 
-export default class Start extends Phaser.Scene
+export default class End extends Phaser.Scene
 {
     // player;
     preload()
@@ -28,8 +28,16 @@ export default class Start extends Phaser.Scene
         this.ball.body.setCollideWorldBounds(true, 0, 0)
         
         this.imageColor = 0xffffff
+
+        this.firstPlat = this.add.rectangle(210,470,50,20,this.imageColor)
+        this.physics.add.existing(this.firstPlat, true)
+        this.physics.add.collider(this.firstPlat, this.ball)
+
+        this.secondPlat = this.add.rectangle(250,450,50,20,this.imageColor)
+        this.physics.add.existing(this.secondPlat, true)
+        this.physics.add.collider(this.secondPlat, this.ball)
         
-        this.base = this.add.rectangle(300,390,200,20,this.imageColor)
+        this.endPlat = this.add.rectangle(400,390,100,20,this.imageColor)
         this.physics.add.existing(this.base, true)
         this.physics.add.collider(this.base, this.ball)
 
@@ -61,7 +69,7 @@ export default class Start extends Phaser.Scene
         }
 
         if (character.x < 5) {
-            this.scene.start("tower1")
+            this.scene.start("tower5")
         }
     }
 }

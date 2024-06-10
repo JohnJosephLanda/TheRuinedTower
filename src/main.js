@@ -8,7 +8,9 @@ import Tower2_4 from './scenes/Tower2_4'
 import Tower3 from './scenes/Tower3'
 import Tower2_4from3 from './scenes/Tower2_4from3'
 import Tower5 from './scenes/Tower5'
+import Tower5fromTop from './scenes/Tower5fromTop'
 import TowerTop from './scenes/TowerTop'
+import End from './scenes/End'
 
 // var audio = new Audio("../media/badGuyHere.wav");
 // audio.muted = true;
@@ -40,11 +42,13 @@ game.scene.add("tower2_4",Tower2_4)
 game.scene.add("tower3",Tower3)
 game.scene.add("tower2_4from3",Tower2_4from3)
 game.scene.add("tower5",Tower5)
+game.scene.add("tower5fromtop",Tower5fromTop)
 game.scene.add("towertop",TowerTop)
+game.scene.add("endingPoint",End)
 
 // this.load.image('player','src/images/player.png')
 // const playerTexture = new Phaser.Textures.Texture(new Phaser.Textures.TextureManager('game'),'playerIMG','player')
 // const player = new Phaser.GameObjects.Sprite('game',400,500)
 
-game.scene.start("titlescreen");
-// game.scene.start("tower2_4from3"); // temp to work on level
+// game.scene.start("titlescreen");
+game.scene.start("towertop"); // temp to work on level
