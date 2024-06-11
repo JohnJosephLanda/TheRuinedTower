@@ -11,7 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "media": "^0.2.1",
-    "parcel-bundler": "^1.12.5",
     "phaser": "^3.80.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
   }
 }

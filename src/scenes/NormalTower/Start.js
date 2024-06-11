@@ -53,11 +53,11 @@ export default class Start extends Phaser.Scene
         this.physics.add.existing(this.stair5, true)
         this.physics.add.collider(this.stair5, this.ball)
 
-        const text = this.add.text(200, 150, "Enter the Tower ... if you dare 😈", { font: "30px Fantasy",fill: 'white' })
+        const text = this.add.text(200, 150, "Enter the Tower ... if you dare 😈", { font: "30px Garamond",fill: 'white' })
         const text2 = this.add.text(300, 200, "←", { font: "50px Fantasy",fill: 'white' })
 
         this.cursors = this.input.keyboard.createCursorKeys()
-        this.pauseButton = this.add.text(0, 0, 'Pause', { font: "30px Garamond",fill: '#AAABAF',style:"italic", backgroundColor: '#484849', fixedHeight: '35', fixedWidth: '80', align: 'center' })
+        this.pauseButton = this.add.text(0, 10, '▐▐', { font: "30px Garamond",fill: '585859',style:"italic", fixedHeight: '35', fixedWidth: '80', align: 'center' })
         .setInteractive()
         .on('pointerdown', () => { 
             let paused = true
