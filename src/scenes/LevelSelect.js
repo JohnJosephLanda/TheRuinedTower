@@ -2,13 +2,15 @@ import Phaser from "phaser"
 import sound from "../media/badGuyHere.wav"
 
 export default class TitleScreen extends Phaser.Scene {
-    // easy, normal, ice
     
     create() {
         const title = this.add.text(400, 150, "The Ruined Tower", { font: "80px Garamond",fill: 'white' })
         title.setOrigin(.5,.5)
 
-        this.easy = this.add.text(150, 250, 'Easy', { font: "40px Garamond",fill: '#AAABAF',style:"italic", backgroundColor: '#484849', fixedHeight: '40', fixedWidth: '100', align: 'center' })
+        //const controls = this.add.text(400, 250, "Controls: arrow keys for movement, esc to pause", { font: "40px Garamond",fill: 'white', style:'italic' })
+        //controls.setOrigin(.5,.5)
+
+        this.easy = this.add.text(150, 250, 'Easy', { font: "40px Garamond",fill: '#AAABAF',c, backgroundColor: '#484849', fixedHeight: '40', fixedWidth: '100', align: 'center' })
         .setInteractive()
         .on('pointerdown', () => this.scene.start("startingPoint") )
         .on('pointerover', () => this.enterButtonHoverState(this.easy) )
