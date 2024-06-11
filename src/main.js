@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
 
 import TitleScreen from './scenes/TitleScreen'
+import LevelSelect from './scenes/LevelSelect'
 import Start from './scenes/Start'
 import Startfrom1 from './scenes/Startfrom1'
 import Tower1 from './scenes/Tower1'
@@ -38,6 +39,7 @@ const config = {
 const game = new Phaser.Game(config)
 
 game.scene.add('titlescreen',TitleScreen)
+game.scene.add('levelselect',LevelSelect)
 game.scene.add("startingPoint",Start)
 game.scene.add("startingPointfrom1",Startfrom1)
 game.scene.add("tower1",Tower1)
