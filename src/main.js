@@ -68,5 +68,5 @@ game.scene.add("pauseScreen",Pause)
 // const playerTexture = new Phaser.Textures.Texture(new Phaser.Textures.TextureManager('game'),'playerIMG','player')
 // const player = new Phaser.GameObjects.Sprite('game',400,500)
 
-// game.scene.start("titlescreen");
-game.scene.start("tower2_4frombottom3"); // temp to work on level
+game.scene.start("titlescreen");
+// game.scene.start("tower2_4frombottom3"); // temp to work on level
