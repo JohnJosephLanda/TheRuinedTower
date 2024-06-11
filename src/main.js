@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
 
-import TitleScreen from './scenes/NormalTower/TitleScreen'
+import TitleScreen from './scenes/TitleScreen'
 import Start from './scenes/NormalTower/Start'
 import Startfrom1 from './scenes/NormalTower/Startfrom1'
 import Tower1 from './scenes/NormalTower/Tower1'

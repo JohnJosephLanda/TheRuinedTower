@@ -57,10 +57,15 @@ export default class Start extends Phaser.Scene
         const text2 = this.add.text(300, 200, "←", { font: "50px Fantasy",fill: 'white' })
 
         this.cursors = this.input.keyboard.createCursorKeys()
+        this.pause = new Key(Phaser.Input.Keyboard.KeyboardPlugin,80)
     }
 
     update() {
         // player.normalPhysics(this.cursors)
+
+        this.input.keyboard.on("keyboard-p",pause())
+
+        if(this.isPause) return; // That will stop your update function
         
         // testing for the ball
         let character = this.ball.body
@@ -83,7 +88,9 @@ export default class Start extends Phaser.Scene
         if (character.x < 5) {
             this.scene.start("tower1")
         }
+    }
 
+    pause() {
         this.scene.pause("startingPoint");
         this.scene.launch("pauseScreen");
     }
