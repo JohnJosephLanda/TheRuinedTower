@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
 
 import TitleScreen from './scenes/TitleScreen'
+import LevelSelect from './scenes/LevelSelect'
 import Start from './scenes/NormalTower/Start'
 import Startfrom1 from './scenes/NormalTower/Startfrom1'
 import Tower1 from './scenes/NormalTower/Tower1'
@@ -21,7 +22,7 @@ const config = {
     width: 800,
     height: 500,
     type: Phaser.AUTO,
-    backgroundColor: '#021668',
+    backgroundColor: '#333333',
     physics: {
         default: 'arcade',
         arcade: {
@@ -30,12 +31,19 @@ const config = {
             },
             debug: true
         }
+    },
+
+    scale: {
+        mode: Phaser.Scale.RESIZE,
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
     }
 }
 
 const game = new Phaser.Game(config)
 
 game.scene.add('titlescreen',TitleScreen)
+game.scene.add('levelselect',LevelSelect)
 game.scene.add("startingPoint",Start)
 game.scene.add("startingPointfrom1",Startfrom1)
 game.scene.add("tower1",Tower1)
