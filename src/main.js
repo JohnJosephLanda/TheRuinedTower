@@ -5,6 +5,8 @@ import LevelSelect from './scenes/LevelSelect'
 import Start from './scenes/NormalTower/Start'
 import Startfrom1 from './scenes/NormalTower/Startfrom1'
 import Tower1 from './scenes/NormalTower/Tower1'
+import Tower1from2 from './scenes/NormalTower/Tower1from2'
+import Tower1from4 from './scenes/NormalTower/Tower1from4'
 import Tower2_4 from './scenes/NormalTower/Tower2_4'
 import Tower3 from './scenes/NormalTower/Tower3'
 import Tower2_4from3 from './scenes/NormalTower/Tower2_4from3'
@@ -47,6 +49,8 @@ game.scene.add('levelselect',LevelSelect)
 game.scene.add("startingPoint",Start)
 game.scene.add("startingPointfrom1",Startfrom1)
 game.scene.add("tower1",Tower1)
+game.scene.add("tower1from2",Tower1from2)
+game.scene.add("tower1from4",Tower1from4)
 game.scene.add("tower2_4",Tower2_4)
 game.scene.add("tower3",Tower3)
 game.scene.add("tower2_4from3",Tower2_4from3)
