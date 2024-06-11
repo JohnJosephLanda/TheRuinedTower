@@ -22,7 +22,7 @@ export default class Tower5 extends Phaser.Scene
         // })
         // this.physics.add.existing(player)
         // player.body.setCollideWorldBounds(true, 0, 0)
-
+        
         this.ball = this.add.circle(120,470,7,0xffffff)
         this.physics.add.existing(this.ball)
         this.ball.body.setCollideWorldBounds(true, 0, 0)
@@ -37,7 +37,11 @@ export default class Tower5 extends Phaser.Scene
         this.physics.add.existing(this.rightWall, true)
         this.physics.add.collider(this.rightWall, this.ball)
 
-        this.skyWall = this.add.rectangle(575,400,50,200,this.imageColor)
+        this.skyWallPlat = this.add.rectangle(575,400,50,200,this.imageColor)
+        this.physics.add.existing(this.skyWallPlat, true)
+        this.physics.add.collider(this.skyWallPlat, this.ball)
+
+        this.skyWall = this.add.rectangle(670,330,30,200,this.imageColor)
         this.physics.add.existing(this.skyWall, true)
         this.physics.add.collider(this.skyWall, this.ball)
 
@@ -68,6 +72,54 @@ export default class Tower5 extends Phaser.Scene
         this.sixthPlat = this.add.rectangle(450,340,50,10,this.imageColor)
         this.physics.add.existing(this.sixthPlat, true)
         this.physics.add.collider(this.sixthPlat, this.ball)
+        
+        this.seventhPlat = this.add.rectangle(670,480,30,20,this.imageColor)
+        this.physics.add.existing(this.seventhPlat, true)
+        this.physics.add.collider(this.seventhPlat, this.ball)
+        
+        this.eighthPlat = this.add.rectangle(740,450,30,10,this.imageColor)
+        this.physics.add.existing(this.eighthPlat, true)
+        this.physics.add.collider(this.eighthPlat, this.ball)
+        
+        this.ninthPlat = this.add.rectangle(740,400,30,10,this.imageColor)
+        this.physics.add.existing(this.ninthPlat, true)
+        this.physics.add.collider(this.ninthPlat, this.ball)
+        
+        this.tenthPlat = this.add.rectangle(738,350,40,10,this.imageColor)
+        this.physics.add.existing(this.tenthPlat, true)
+        this.physics.add.collider(this.tenthPlat, this.ball)
+        
+        this.eleventhPlat = this.add.rectangle(700,320,30,10,this.imageColor)
+        this.physics.add.existing(this.eleventhPlat, true)
+        this.physics.add.collider(this.eleventhPlat, this.ball)
+        
+        this.twelfthPlat = this.add.rectangle(703,270,40,10,this.imageColor)
+        this.physics.add.existing(this.twelfthPlat, true)
+        this.physics.add.collider(this.twelfthPlat, this.ball)
+        
+        this.thirtheenthPlat = this.add.rectangle(500,255,70,40,this.imageColor)
+        this.physics.add.existing(this.thirtheenthPlat, true)
+        this.physics.add.collider(this.thirtheenthPlat, this.ball)
+        
+        this.fourteenthPlat = this.add.rectangle(350,280,70,50,this.imageColor)
+        this.physics.add.existing(this.fourteenthPlat, true)
+        this.physics.add.collider(this.fourteenthPlat, this.ball)
+        
+        this.fifteenthPlat = this.add.rectangle(200,280,85,55,this.imageColor)
+        this.physics.add.existing(this.fifteenthPlat, true)
+        this.physics.add.collider(this.fifteenthPlat, this.ball)
+        
+        this.sixteenthPlat = this.add.rectangle(120,210,50,20,this.imageColor)
+        this.physics.add.existing(this.sixteenthPlat, true)
+        this.physics.add.collider(this.sixteenthPlat, this.ball)
+        
+        this.seventeenthPlat = this.add.rectangle(300,180,60,30,this.imageColor)
+        this.physics.add.existing(this.seventeenthPlat, true)
+        this.physics.add.collider(this.seventeenthPlat, this.ball)
+        
+        this.topPlat = this.add.rectangle(575,140,50,20,this.imageColor)
+        this.physics.add.existing(this.topPlat, true)
+        this.physics.add.collider(this.topPlat, this.ball)
         
         this.cursors = this.input.keyboard.createCursorKeys()
         this.pauseButton = this.add.text(0, 0, 'Pause', { font: "30px Garamond",fill: '#AAABAF',style:"italic", backgroundColor: '#484849', fixedHeight: '35', fixedWidth: '80', align: 'center' })
