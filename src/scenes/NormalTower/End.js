@@ -41,8 +41,9 @@ export default class End extends Phaser.Scene
         this.physics.add.existing(this.endPlat, true)
         this.physics.add.collider(this.endPlat, this.ball)
 
-        const text = this.add.text(100, 100, "Congratulations.", { font: "50px Arial",fill: 'white' })
-        const text2 = this.add.text(300, 250, "You have beaten the tower.", { font: "30px Arial",fill: 'white' })
+        const text = this.add.text(100, 100, "Congratulations.", { font: "50px Garamond",fill: 'white' })
+        const text2 = this.add.text(300, 250, "You have beaten the tower.", { font: "30px Garamond",fill: 'white' })
+        const text3 = this.add.text(300, 300, "Jump off to restart or play another tower.", { font: "20px Garamond",fill: 'white' })
 
         this.cursors = this.input.keyboard.createCursorKeys()
         this.pauseButton = this.add.text(0, 0, 'Pause', { font: "30px Garamond",fill: '#AAABAF',style:"italic", backgroundColor: '#484849', fixedHeight: '35', fixedWidth: '80', align: 'center' })
@@ -78,8 +79,8 @@ export default class End extends Phaser.Scene
             character.setAccelerationX(-character.velocity.x*4)
         }
 
-        if (character.y > 485) {
-            this.scene.start("towertop")
+        if (character.y > 485 || character.x > 785 || character.x < 5) {
+            this.scene.start("titlescreen")
         }
     }
 }
