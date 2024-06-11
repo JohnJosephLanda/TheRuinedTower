@@ -35,7 +35,5 @@ export default class TitleScreen extends Phaser.Scene {
     
       enterButtonRestState(btn) {
         btn.setStyle({ fill: '#AAABAF', backgroundColor: '#414141' });
-
-
       }
 }
