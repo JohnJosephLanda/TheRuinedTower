@@ -57,13 +57,21 @@ export default class Start extends Phaser.Scene
         const text2 = this.add.text(300, 200, "←", { font: "50px Fantasy",fill: 'white' })
 
         this.cursors = this.input.keyboard.createCursorKeys()
-        // this.pause = new Key(Phaser.Input.Keyboard.KeyboardPlugin,80)
+        this.pauseButton = this.add.text(0, 0, 'Pause', { font: "30px Garamond",fill: '#AAABAF',style:"italic", backgroundColor: '#484849', fixedHeight: '35', fixedWidth: '80', align: 'center' })
+        .setInteractive()
+        .on('pointerdown', () => { 
+            let paused = true
+            this.scene.launch("pauseScreen",{scene:"startingPoint"})
+            this.scene.sleep("startingPoint")
+            let velo = this.ball.body.velocity, pos = this.ball.body.position
+            while (this.scene.isSleeping()) {
+                this.ball.body.setVelocity(0)
+            }
+        } )
     }
 
     update() {
         // player.normalPhysics(this.cursors)
-
-        // this.input.keyboard.on("keyboard-p",pause())
         
         // testing for the ball
         let character = this.ball.body
@@ -86,10 +94,5 @@ export default class Start extends Phaser.Scene
         if (character.x < 5) {
             this.scene.start("tower1")
         }
-    }
-
-    pause() {
-        this.scene.pause("startingPoint");
-        this.scene.launch("pauseScreen");
     }
 }
