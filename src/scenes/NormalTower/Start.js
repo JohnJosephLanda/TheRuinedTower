@@ -63,7 +63,6 @@ export default class Start extends Phaser.Scene
             let paused = true
             this.scene.launch("pauseScreen",{scene:"startingPoint"})
             this.scene.sleep("startingPoint")
-            let velo = this.ball.body.velocity, pos = this.ball.body.position
             while (this.scene.isSleeping()) {
                 this.ball.body.setVelocity(0)
             }
