@@ -122,12 +122,12 @@ export default class Tower5fromTop extends Phaser.Scene
         this.physics.add.collider(this.topPlat, this.ball)
         
         this.cursors = this.input.keyboard.createCursorKeys()
-        this.pauseButton = this.add.text(0, 0, 'Pause', { font: "30px Garamond",fill: '#AAABAF',style:"italic", backgroundColor: '#484849', fixedHeight: '35', fixedWidth: '80', align: 'center' })
+        this.pauseButton = this.add.text(0, 10, '▐▐', { font: "30px Garamond",fill: '585859',style:"italic", fixedHeight: '35', fixedWidth: '80', align: 'center' })
         .setInteractive()
         .on('pointerdown', () => { 
             let paused = true
-            this.scene.launch("pauseScreen",{scene:"tower5"})
-            this.scene.sleep("tower5")
+            this.scene.launch("pauseScreen",{scene:"tower5fromtop"})
+            this.scene.sleep("tower5fromtop")
             while (this.scene.isSleeping()) {
                 this.ball.body.setVelocity(0)
             }

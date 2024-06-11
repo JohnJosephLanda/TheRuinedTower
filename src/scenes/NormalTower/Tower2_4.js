@@ -124,7 +124,7 @@ export default class Tower2_4 extends Phaser.Scene
         const arrowFrom3 = this.add.text(750, 110, "←", { font: "40px Fantasy",fill: 'white' })
 
         this.cursors = this.input.keyboard.createCursorKeys()
-        this.pauseButton = this.add.text(0, 0, 'Pause', { font: "30px Garamond",fill: '#AAABAF',style:"italic", backgroundColor: '#484849', fixedHeight: '35', fixedWidth: '80', align: 'center' })
+        this.pauseButton = this.add.text(0, 10, '▐▐', { font: "30px Garamond",fill: '585859',style:"italic", fixedHeight: '35', fixedWidth: '80', align: 'center' })
         .setInteractive()
         .on('pointerdown', () => { 
             let paused = true

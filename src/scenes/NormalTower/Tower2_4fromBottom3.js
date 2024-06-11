@@ -2,7 +2,7 @@ import Phaser from "phaser"
 
 import Player from "../../sprites/Player"
 
-export default class Tower2_4from3 extends Phaser.Scene
+export default class Tower2_4fromBottom3 extends Phaser.Scene
 {
     // player;
     preload()
@@ -23,7 +23,7 @@ export default class Tower2_4from3 extends Phaser.Scene
         // this.physics.add.existing(player)
         // player.body.setCollideWorldBounds(true, 0, 0)
 
-        this.ball = this.add.circle(780, 140, 7, 0xffffff)
+        this.ball = this.add.circle(780, 370, 7, 0xffffff)
         this.physics.add.existing(this.ball)
         this.ball.body.setCollideWorldBounds(true, 0, 0)
 
@@ -128,8 +128,8 @@ export default class Tower2_4from3 extends Phaser.Scene
         .setInteractive()
         .on('pointerdown', () => { 
             let paused = true
-            this.scene.launch("pauseScreen",{scene:"tower2_4from3"})
-            this.scene.sleep("tower2_4from3")
+            this.scene.launch("pauseScreen",{scene:"tower2_4frombottom3"})
+            this.scene.sleep("tower2_4frombottom3")
             while (this.scene.isSleeping()) {
                 this.ball.body.setVelocity(0)
             }

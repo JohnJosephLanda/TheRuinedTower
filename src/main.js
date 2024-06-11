@@ -11,6 +11,7 @@ import Tower2_4 from './scenes/NormalTower/Tower2_4'
 import Tower3 from './scenes/NormalTower/Tower3'
 import Tower3from4 from './scenes/NormalTower/Tower3from4'
 import Tower2_4from3 from './scenes/NormalTower/Tower2_4from3'
+import Tower2_4fromBottom3 from './scenes/NormalTower/Tower2_4fromBottom3'
 import Tower5 from './scenes/NormalTower/Tower5'
 import Tower5fromTop from './scenes/NormalTower/Tower5fromTop'
 import TowerTop from './scenes/NormalTower/TowerTop'
@@ -56,6 +57,7 @@ game.scene.add("tower2_4",Tower2_4)
 game.scene.add("tower3",Tower3)
 game.scene.add("tower3from4",Tower3from4)
 game.scene.add("tower2_4from3",Tower2_4from3)
+game.scene.add("tower2_4frombottom3",Tower2_4fromBottom3)
 game.scene.add("tower5",Tower5)
 game.scene.add("tower5fromtop",Tower5fromTop)
 game.scene.add("towertop",TowerTop)
@@ -67,4 +69,4 @@ game.scene.add("pauseScreen",Pause)
 // const player = new Phaser.GameObjects.Sprite('game',400,500)
 
 // game.scene.start("titlescreen");
-game.scene.start("endingPoint"); // temp to work on level
+game.scene.start("tower2_4frombottom3"); // temp to work on level

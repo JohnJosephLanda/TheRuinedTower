@@ -78,12 +78,12 @@ export default class Tower3from4 extends Phaser.Scene
         this.physics.add.collider(this.topPlat, this.ball)
 
         this.cursors = this.input.keyboard.createCursorKeys()
-        this.pauseButton = this.add.text(0, 0, 'Pause', { font: "30px Garamond",fill: '#AAABAF',style:"italic", backgroundColor: '#484849', fixedHeight: '35', fixedWidth: '80', align: 'center' })
+        this.pauseButton = this.add.text(0, 10, '▐▐', { font: "30px Garamond",fill: '585859',style:"italic", fixedHeight: '35', fixedWidth: '80', align: 'center' })
         .setInteractive()
         .on('pointerdown', () => { 
             let paused = true
-            this.scene.launch("pauseScreen",{scene:"tower3"})
-            this.scene.sleep("tower3")
+            this.scene.launch("pauseScreen",{scene:"tower3from4"})
+            this.scene.sleep("tower3from4")
             while (this.scene.isSleeping()) {
                 this.ball.body.setVelocity(0)
             }
@@ -112,7 +112,7 @@ export default class Tower3from4 extends Phaser.Scene
         }
 
         if (character.x < 5 && character.y > 250) {
-            this.scene.start("tower2_4")
+            this.scene.start("tower2_4frombottom3")
         }
         else if (character.x < 5) {
             this.scene.start("tower2_4from3")
