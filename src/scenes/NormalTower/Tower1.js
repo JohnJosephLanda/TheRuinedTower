@@ -7,7 +7,7 @@ export default class Tower1 extends Phaser.Scene
     // player;
     preload()
     {
-        this.load.image('player','src/images/player.png')
+        this.load.image('player','src/sprites/PlayerStylesheet.png')
     }
 
     create()
