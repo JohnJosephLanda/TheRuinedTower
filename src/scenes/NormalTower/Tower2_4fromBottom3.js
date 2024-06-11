@@ -22,6 +22,10 @@ export default class Tower2_4fromBottom3 extends Phaser.Scene
         // })
         // this.physics.add.existing(player)
         // player.body.setCollideWorldBounds(true, 0, 0)
+        
+        this.ball = this.add.circle(780, 370, 7, 0xffffff)
+        this.physics.add.existing(this.ball)
+        this.ball.body.setCollideWorldBounds(true, 0, 0)
 
         this.imageColor = 0xffffff
 
@@ -130,10 +134,6 @@ export default class Tower2_4fromBottom3 extends Phaser.Scene
                 this.ball.body.setVelocity(0)
             }
         } )
-        
-        this.ball = this.add.circle(780, 370, 7, 0xffffff)
-        this.physics.add.existing(this.ball)
-        this.ball.body.setCollideWorldBounds(true, 0, 0)
     }
 
     update() {
