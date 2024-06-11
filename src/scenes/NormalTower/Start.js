@@ -7,21 +7,21 @@ export default class Start extends Phaser.Scene
     // player;
     preload()
     {
-        this.load.image('player','src/images/player.png')
+        this.load.image('player','../../sprites/PlayerStylesheet.png')
     }
 
     create()
     {
         // working on adding the player
 
-        // player = new Player({
+        // this.player = new Player({
         //     scene: this,
         //     x: 400,
-        //     y: 400,
+        //     y: 200,
         //     img: 'player'
         // })
-        // this.physics.add.existing(player)
-        // player.body.setCollideWorldBounds(true, 0, 0)
+        // this.physics.add.existing(this.player)
+        // this.player.body.setCollideWorldBounds(true, 0, 0)
 
         this.ball = this.add.circle(600, 300, 7, 0xffffff)
         this.physics.add.existing(this.ball)
@@ -57,13 +57,20 @@ export default class Start extends Phaser.Scene
         const text2 = this.add.text(300, 200, "←", { font: "50px Fantasy",fill: 'white' })
 
         this.cursors = this.input.keyboard.createCursorKeys()
-        // this.pause = new Key(Phaser.Input.Keyboard.KeyboardPlugin,80)
+        this.pauseButton = this.add.text(0, 0, 'Pause', { font: "30px Garamond",fill: '#AAABAF',style:"italic", backgroundColor: '#484849', fixedHeight: '35', fixedWidth: '80', align: 'center' })
+        .setInteractive()
+        .on('pointerdown', () => { 
+            let paused = true
+            this.scene.launch("pauseScreen",{scene:"startingPoint"})
+            this.scene.sleep("startingPoint")
+            while (this.scene.isSleeping()) {
+                this.ball.body.setVelocity(0)
+            }
+        } )
     }
 
     update() {
         // player.normalPhysics(this.cursors)
-
-        // this.input.keyboard.on("keyboard-p",pause())
         
         // testing for the ball
         let character = this.ball.body
@@ -86,10 +93,5 @@ export default class Start extends Phaser.Scene
         if (character.x < 5) {
             this.scene.start("tower1")
         }
-    }
-
-    pause() {
-        this.scene.pause("startingPoint");
-        this.scene.launch("pauseScreen");
     }
 }

@@ -45,6 +45,16 @@ export default class End extends Phaser.Scene
         const text2 = this.add.text(300, 250, "You have beaten the tower.", { font: "30px Arial",fill: 'white' })
 
         this.cursors = this.input.keyboard.createCursorKeys()
+        this.pauseButton = this.add.text(0, 0, 'Pause', { font: "30px Garamond",fill: '#AAABAF',style:"italic", backgroundColor: '#484849', fixedHeight: '35', fixedWidth: '80', align: 'center' })
+        .setInteractive()
+        .on('pointerdown', () => { 
+            let paused = true
+            this.scene.launch("pauseScreen",{scene:"endingPoint"})
+            this.scene.sleep("endingPoint")
+            while (this.scene.isSleeping()) {
+                this.ball.body.setVelocity(0)
+            }
+        } )
     }
 
     update() {
