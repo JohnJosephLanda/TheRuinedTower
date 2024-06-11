@@ -107,7 +107,7 @@ export default class Tower2_4from3 extends Phaser.Scene
         this.physics.add.existing(this.tenthPlat, true)
         this.physics.add.collider(this.tenthPlat, this.ball)
         
-        this.eleventhPlat = this.add.rectangle(540,100,30,10,this.imageColor)
+        this.eleventhPlat = this.add.rectangle(540,100,20,10,this.imageColor)
         this.physics.add.existing(this.eleventhPlat, true)
         this.physics.add.collider(this.eleventhPlat, this.ball)
         
@@ -118,14 +118,18 @@ export default class Tower2_4from3 extends Phaser.Scene
         this.topPlat = this.add.rectangle(120,50,50,10,this.imageColor)
         this.physics.add.existing(this.topPlat, true)
         this.physics.add.collider(this.topPlat, this.ball)
+        
+        const arrowTo3 = this.add.text(750, 338, "➡", { font: "40px Fantasy",fill: 'white' })
+        const arrowTo5 = this.add.text(113, 5, "↑", { font: "30px Fantasy",fill: 'white' })
+        const arrowFrom3 = this.add.text(750, 110, "←", { font: "40px Fantasy",fill: 'white' })
 
         this.cursors = this.input.keyboard.createCursorKeys()
         this.pauseButton = this.add.text(0, 0, 'Pause', { font: "30px Garamond",fill: '#AAABAF',style:"italic", backgroundColor: '#484849', fixedHeight: '35', fixedWidth: '80', align: 'center' })
         .setInteractive()
         .on('pointerdown', () => { 
             let paused = true
-            this.scene.launch("pauseScreen",{scene:"tower2_4from3"})
-            this.scene.sleep("tower2_4from3")
+            this.scene.launch("pauseScreen",{scene:"tower2_4"})
+            this.scene.sleep("tower2_4")
             while (this.scene.isSleeping()) {
                 this.ball.body.setVelocity(0)
             }

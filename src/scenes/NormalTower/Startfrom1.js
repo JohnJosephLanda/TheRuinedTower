@@ -33,9 +33,9 @@ export default class Startfrom1 extends Phaser.Scene
         this.physics.add.existing(this.topLeftWall, true)
         this.physics.add.collider(this.topLeftWall, this.ball)
 
-        this.stair1 = this.add.rectangle(270,485,600,30,this.imageColor)
-        this.physics.add.existing(this.stair1, true)
-        this.physics.add.collider(this.stair1, this.ball)
+        this.floor = this.add.rectangle(400,485,800,30,this.imageColor)
+        this.physics.add.existing(this.floor, true)
+        this.physics.add.collider(this.floor, this.ball)
 
         this.stair2 = this.add.rectangle(250,455,550,30,this.imageColor)
         this.physics.add.existing(this.stair2, true)
