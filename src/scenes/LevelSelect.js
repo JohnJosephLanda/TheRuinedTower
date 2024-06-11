@@ -10,7 +10,7 @@ export default class TitleScreen extends Phaser.Scene {
         //const controls = this.add.text(400, 250, "Controls: arrow keys for movement, esc to pause", { font: "40px Garamond",fill: 'white', style:'italic' })
         //controls.setOrigin(.5,.5)
 
-        this.easy = this.add.text(150, 250, 'Easy', { font: "40px Garamond",fill: '#AAABAF',c, backgroundColor: '#484849', fixedHeight: '40', fixedWidth: '100', align: 'center' })
+        this.easy = this.add.text(150, 250, 'Easy', { font: "40px Garamond",fill: '#AAABAF', backgroundColor: '#484849', fixedHeight: '40', fixedWidth: '100', align: 'center' })
         .setInteractive()
         .on('pointerdown', () => this.scene.start("startingPoint") )
         .on('pointerover', () => this.enterButtonHoverState(this.easy) )
