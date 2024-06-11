@@ -1,6 +1,4 @@
 node_modules
 .cache
-dist/index.js
-dist/index.js.map
 dist/main.1f19ae8e.js
 dist/main.1f19ae8e.js.map
