@@ -19,7 +19,7 @@ export default class TitleScreen extends Phaser.Scene {
 
         this.easy = this.add.text(150, 250, 'Easy', { font: "40px Garamond",fill: '#AAABAF', backgroundColor: '#484849', fixedHeight: '40', fixedWidth: '100', align: 'center' })
         .setInteractive()
-        .on('pointerdown', () => this.scene.start("startingPoint") )
+        .on('pointerdown', () => this.scene.start("easystartingPoint") )
         .on('pointerover', () => this.enterButtonHoverState(this.easy) )
         .on('pointerout', () => this.enterButtonRestState(this.easy) )
 

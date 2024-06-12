@@ -58,40 +58,48 @@ export default class EasyTower3 extends Phaser.Scene
 
         this.wallColor = 0x696567
         this.blockColor = 0x91917e
+        
+        this.base = this.add.rectangle(400,480,800,50,this.blockColor)
+        this.physics.add.existing(this.base, true)
+        this.physics.add.collider(this.base, this.player)
+        
+        this.recoveryPlat = this.add.rectangle(150,450,70,20,this.blockColor)
+        this.physics.add.existing(this.recoveryPlat, true)
+        this.physics.add.collider(this.recoveryPlat, this.player)
 
-        this.firstPlat = this.add.rectangle(110,400,40,10,this.blockColor)
+        this.firstPlat = this.add.rectangle(110,400,100,10,this.blockColor)
         this.physics.add.existing(this.firstPlat, true)
         this.physics.add.collider(this.firstPlat, this.player)
         
-        this.secondPlat = this.add.rectangle(270,400,30,10,this.blockColor)
+        this.secondPlat = this.add.rectangle(270,400,50,10,this.blockColor)
         this.physics.add.existing(this.secondPlat, true)
         this.physics.add.collider(this.secondPlat, this.player)
         
-        this.thirdPlat = this.add.rectangle(350,360,30,10,this.blockColor)
+        this.thirdPlat = this.add.rectangle(350,360,50,10,this.blockColor)
         this.physics.add.existing(this.thirdPlat, true)
         this.physics.add.collider(this.thirdPlat, this.player)
         
-        this.fourthPlat = this.add.rectangle(400,320,30,10,this.blockColor)
+        this.fourthPlat = this.add.rectangle(400,320,50,10,this.blockColor)
         this.physics.add.existing(this.fourthPlat, true)
         this.physics.add.collider(this.fourthPlat, this.player)
         
-        this.fifthPlat = this.add.rectangle(500,320,20,10,this.blockColor)
+        this.fifthPlat = this.add.rectangle(480,320,50,10,this.blockColor)
         this.physics.add.existing(this.fifthPlat, true)
         this.physics.add.collider(this.fifthPlat, this.player)
         
-        this.sixthPlat = this.add.rectangle(530,280,20,10,this.blockColor)
+        this.sixthPlat = this.add.rectangle(530,280,50,10,this.blockColor)
         this.physics.add.existing(this.sixthPlat, true)
         this.physics.add.collider(this.sixthPlat, this.player)
         
-        this.seventhPlat = this.add.rectangle(500,250,20,10,this.blockColor)
+        this.seventhPlat = this.add.rectangle(500,250,50,10,this.blockColor)
         this.physics.add.existing(this.seventhPlat, true)
         this.physics.add.collider(this.seventhPlat, this.player)
         
-        this.eigthPlat = this.add.rectangle(500,200,30,10,this.blockColor)
+        this.eigthPlat = this.add.rectangle(500,200,40,10,this.blockColor)
         this.physics.add.existing(this.eigthPlat, true)
         this.physics.add.collider(this.eigthPlat, this.player)
         
-        this.topPlat = this.add.rectangle(300,180,50,10,this.blockColor)
+        this.topPlat = this.add.rectangle(300,180,100,10,this.blockColor)
         this.physics.add.existing(this.topPlat, true)
         this.physics.add.collider(this.topPlat, this.player)
         
@@ -151,9 +159,6 @@ export default class EasyTower3 extends Phaser.Scene
         }
         else if (character.x < 5) {
             this.scene.start("easytower2_4from3")
-        }
-        if (character.y > 480) {
-            this.scene.start("easystartingPoint")
         }
     }
 }

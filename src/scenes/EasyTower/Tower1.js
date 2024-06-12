@@ -95,11 +95,11 @@ export default class EasyTower1 extends Phaser.Scene
         this.physics.add.existing(this.ninthPlat, true)
         this.physics.add.collider(this.ninthPlat, this.player)
         
-        this.tenthPlat = this.add.rectangle(740,80,50,10,this.blockColor)
+        this.tenthPlat = this.add.rectangle(740,80,40,10,this.blockColor)
         this.physics.add.existing(this.tenthPlat, true)
         this.physics.add.collider(this.tenthPlat, this.player)
         
-        this.topPlat = this.add.rectangle(740,40,50,10,this.blockColor)
+        this.topPlat = this.add.rectangle(740,40,30,10,this.blockColor)
         this.physics.add.existing(this.topPlat, true)
         this.physics.add.collider(this.topPlat, this.player)
 

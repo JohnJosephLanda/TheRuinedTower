@@ -7,14 +7,11 @@ import Pause from './scenes/Pause'
 import EasyStart from './scenes/EasyTower/Start'
 import EasyStartfrom1 from './scenes/EasyTower/Startfrom1'
 import EasyTower1 from './scenes/EasyTower/Tower1'
-import EasyTower1from2 from './scenes/EasyTower/Tower1from2'
-import EasyTower1from4 from './scenes/EasyTower/Tower1from4'
 import EasyTower2_4 from './scenes/EasyTower/Tower2_4'
 import EasyTower3 from './scenes/EasyTower/Tower3'
 import EasyTower3from4 from './scenes/EasyTower/Tower3from4'
 import EasyTower2_4from3 from './scenes/EasyTower/Tower2_4from3'
 import EasyTower2_4fromBottom3 from './scenes/EasyTower/Tower2_4fromBottom3'
-import EasyTower2_4from5 from './scenes/EasyTower/Tower2_4from5'
 import EasyTower5 from './scenes/EasyTower/Tower5'
 import EasyTower5fromTop from './scenes/EasyTower/Tower5fromTop'
 import EasyTowerTop from './scenes/EasyTower/TowerTop'
@@ -123,18 +120,15 @@ game.scene.add("iceendingPoint",IceEnd)
 game.scene.add("easystartingPoint",EasyStart)
 game.scene.add("easystartingPointfrom1",EasyStartfrom1)
 game.scene.add("easytower1",EasyTower1)
-game.scene.add("easytower1from2",EasyTower1from2)
-game.scene.add("easytower1from4",EasyTower1from4)
 game.scene.add("easytower2_4",EasyTower2_4)
 game.scene.add("easytower3",EasyTower3)
 game.scene.add("easytower3from4",EasyTower3from4)
 game.scene.add("easytower2_4from3",EasyTower2_4from3)
 game.scene.add("easytower2_4frombottom3",EasyTower2_4fromBottom3)
-game.scene.add("easytower2_4from5",EasyTower2_4from5)
 game.scene.add("easytower5",EasyTower5)
 game.scene.add("easytower5fromtop",EasyTower5fromTop)
 game.scene.add("easytowertop",EasyTowerTop)
 game.scene.add("easyendingPoint",EasyEnd)
 
-game.scene.start("titlescreen");
-// game.scene.start("towertop"); // temp to work on level
+// game.scene.start("titlescreen");
+game.scene.start("easytower3"); // temp to work on level

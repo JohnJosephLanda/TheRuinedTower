@@ -63,9 +63,17 @@ export default class EasyTower2_4from3 extends Phaser.Scene
         this.wallColor = 0x4c4d43
         this.blockColor = 0xb2b39b
         
-        this.firstPlat = this.add.rectangle(680,430,50,10,this.blockColor)
-        this.physics.add.existing(this.firstPlat, true)
-        this.physics.add.collider(this.firstPlat, this.player)
+        this.base = this.add.rectangle(400,450,800,150,this.blockColor)
+        this.physics.add.existing(this.base, true)
+        this.physics.add.collider(this.base, this.player)
+        
+        this.recoveryPlat = this.add.rectangle(620,370,100,30,this.blockColor)
+        this.physics.add.existing(this.recoveryPlat, true)
+        this.physics.add.collider(this.recoveryPlat, this.player)
+        
+        this.recoveryPlat2 = this.add.rectangle(660,340,100,30,this.blockColor)
+        this.physics.add.existing(this.recoveryPlat2, true)
+        this.physics.add.collider(this.recoveryPlat2, this.player)
 
         // path after completing the room on the right
         this.secondPlat = this.add.rectangle(700,200,100,30,this.blockColor)
@@ -76,7 +84,7 @@ export default class EasyTower2_4from3 extends Phaser.Scene
         this.physics.add.existing(this.thirdPlat, true)
         this.physics.add.collider(this.thirdPlat, this.player)
         
-        this.fourthPlat = this.add.rectangle(700,300,100,30,this.blockColor)
+        this.fourthPlat = this.add.rectangle(700,300,140,30,this.blockColor)
         this.physics.add.existing(this.fourthPlat, true)
         this.physics.add.collider(this.fourthPlat, this.player)
         
@@ -84,15 +92,15 @@ export default class EasyTower2_4from3 extends Phaser.Scene
         this.physics.add.existing(this.fifthPlat, true)
         this.physics.add.collider(this.fifthPlat, this.player)
         
-        this.sixthPlat = this.add.rectangle(350,320,75,30,this.blockColor)
+        this.sixthPlat = this.add.rectangle(350,320,120,30,this.blockColor)
         this.physics.add.existing(this.sixthPlat, true)
         this.physics.add.collider(this.sixthPlat, this.player)
         
-        this.seventhPlat = this.add.rectangle(120,270,75,30,this.blockColor)
+        this.seventhPlat = this.add.rectangle(120,270,90,30,this.blockColor)
         this.physics.add.existing(this.seventhPlat, true)
         this.physics.add.collider(this.seventhPlat, this.player)
         
-        this.eighthPlat = this.add.rectangle(120,210,50,10,this.blockColor)
+        this.eighthPlat = this.add.rectangle(120,210,60,10,this.blockColor)
         this.physics.add.existing(this.eighthPlat, true)
         this.physics.add.collider(this.eighthPlat, this.player)
         
@@ -100,19 +108,20 @@ export default class EasyTower2_4from3 extends Phaser.Scene
         this.physics.add.existing(this.ninthPlat, true)
         this.physics.add.collider(this.ninthPlat, this.player)
 
-        this.tenthPlat = this.add.rectangle(320,150,50,10,this.blockColor)
+        this.tenthPlat = this.add.rectangle(320,150,80,10,this.blockColor)
         this.physics.add.existing(this.tenthPlat, true)
         this.physics.add.collider(this.tenthPlat, this.player)
         
-        this.eleventhPlat = this.add.rectangle(540,100,20,10,this.blockColor)
-        this.physics.add.existing(this.eleventhPlat, true)
-        this.physics.add.collider(this.eleventhPlat, this.player)
+        // skipping hard jump
+        // this.eleventhPlat = this.add.rectangle(540,100,20,10,this.blockColor)
+        // this.physics.add.existing(this.eleventhPlat, true)
+        // this.physics.add.collider(this.eleventhPlat, this.player)
         
-        this.twelfthPlat = this.add.rectangle(120,100,50,10,this.blockColor)
+        this.twelfthPlat = this.add.rectangle(120,100,70,10,this.blockColor)
         this.physics.add.existing(this.twelfthPlat, true)
         this.physics.add.collider(this.twelfthPlat, this.player)
         
-        this.topPlat = this.add.rectangle(120,50,50,10,this.blockColor)
+        this.topPlat = this.add.rectangle(120,50,60,10,this.blockColor)
         this.physics.add.existing(this.topPlat, true)
         this.physics.add.collider(this.topPlat, this.player)
         
