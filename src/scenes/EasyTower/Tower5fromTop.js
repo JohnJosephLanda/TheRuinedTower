@@ -193,11 +193,8 @@ export default class EasyTower5fromTop extends Phaser.Scene
         if (character.x > 785) {
             this.scene.start("easytowertop")
         }
-        if (character.y > 480 & character.x > 575) {
-            this.scene.start("easytower2_4from3")
-        }
-        else if (character.y > 480) {
-            this.scene.start("easytower2_4from5")
+        if (character.y > 480) {
+            this.scene.start("easytower5")
         }
     }
 }
