@@ -15,6 +15,11 @@ export default class Startfrom1 extends Phaser.Scene
 
     create()
     {
+
+        var audio = new Audio("./media/bigBadGuyHere.wav");
+        audio.play();
+
+        // working on adding the player
         this.width = this.cameras.main.width
         this.height = this.cameras.main.height
 
@@ -90,9 +95,11 @@ export default class Startfrom1 extends Phaser.Scene
         .setInteractive()
         .on('pointerdown', () => { 
             let paused = true
+            audio.pause();
             this.scene.launch("pauseScreen",{scene:"startingPointfrom1"})
             this.scene.sleep("startingPointfrom1")
             while (this.scene.isSleeping()) {
+                audio.pause();
                 this.player.body.setVelocity(0)
             }
         } )

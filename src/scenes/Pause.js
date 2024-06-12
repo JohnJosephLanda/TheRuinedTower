@@ -15,7 +15,8 @@ export default class Pause extends Phaser.Scene
         .setInteractive()
         .on('pointerdown', () => { 
             this.scene.wake(this.prevScene)
-            this.scene.stop("pauseScreen")
+            this.scene.stop("pauseScreen");
+            
         } )
 
     }
