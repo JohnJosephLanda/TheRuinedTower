@@ -8,7 +8,7 @@ export default class End extends Phaser.Scene
     // player;
     preload()
     {
-        this.load.image('player','src/images/player.png')
+        this.load.spritesheet('player',player,{frameWidth:76.8,frameHeight:138,startFrame:0,endFrame:5})
         this.load.image('skyback', bg0);
     }
 
@@ -20,6 +20,31 @@ export default class End extends Phaser.Scene
         this.bg = this.add.image(0,0,'skyback')
         this.bg.setOrigin(0, 0)
         
+        this.anims.create({
+            key:"idle",
+            frames: this.anims.generateFrameNumbers('player',{frames:[0]}),
+            frameRate: 1,
+            repeat:-1
+        })
+        this.anims.create({
+            key:"jump",
+            frames: this.anims.generateFrameNumbers('player',{frames:[1]}),
+            frameRate: 1,
+            repeat:-1
+        })
+        this.anims.create({
+            key:"walkLeft",
+            frames: this.anims.generateFrameNumbers('player',{frames:[2,3]}),
+            frameRate: 10,
+            repeat:-1
+        })
+        this.anims.create({
+            key:"walkRight",
+            frames: this.anims.generateFrameNumbers('player',{frames:[4,5]}),
+            frameRate: 10,
+            repeat:-1
+        })
+        
         this.player = this.make.sprite(new Player({
             scene: this,
             x:210,
@@ -28,7 +53,7 @@ export default class End extends Phaser.Scene
         }),true)
         this.physics.add.existing(this.player)
         this.player.body.setCollideWorldBounds(true, 0, 0)
-        this.player.setScale(.07,.07)
+        this.player.setScale(.2,.2)
         
         this.blockColor = 0x91917e
 
@@ -49,6 +74,8 @@ export default class End extends Phaser.Scene
         const text3 = this.add.text(300, 300, "Jump off to restart or play another tower.", { font: "20px Garamond",fill: 'white' })
 
         this.cursors = this.input.keyboard.createCursorKeys()
+        
+        this.player.play('idle',true)
     }
 
     update() {
@@ -60,13 +87,19 @@ export default class End extends Phaser.Scene
         if (this.cursors.right.isDown) {
             if (character.velocity.x < 25) character.setVelocityX(character.velocity.x+2)
                 character.setAccelerationX(75)
+            this.player.play('walkRight',true)
         }
         else if (this.cursors.left.isDown) {
             if (character.velocity.x > -25) character.setVelocityX(character.velocity.x-2)
             character.setAccelerationX(-75)
+            this.player.play('walkLeft',true)
         }
         else {
             character.setAccelerationX(-character.velocity.x*4)
+            this.player.play('idle',true)
+        }
+        if (!character.onFloor()) {
+            this.player.play('jump',true)
         }
 
         if (character.y > 485 || character.x > 785 || character.x < 5) {

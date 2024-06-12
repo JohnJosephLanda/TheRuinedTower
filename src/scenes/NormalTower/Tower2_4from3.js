@@ -9,7 +9,7 @@ export default class Tower2_4from3 extends Phaser.Scene
     // player;
     preload()
     {
-        this.load.spritesheet('player',player,{frameWidth:142,frameHeight:255,startFrame:0,endFrame:5})
+        this.load.spritesheet('player',player,{frameWidth:76.8,frameHeight:138,startFrame:0,endFrame:5})
         this.load.image('back', bg0);
     }
 
@@ -25,6 +25,31 @@ export default class Tower2_4from3 extends Phaser.Scene
         const arrowTo5 = this.add.text(113, 5, "↑", { font: "30px Fantasy",fill: 'white' })
         const arrowFrom3 = this.add.text(750, 110, "←", { font: "40px Fantasy",fill: 'white' })
         
+        this.anims.create({
+            key:"idle",
+            frames: this.anims.generateFrameNumbers('player',{frames:[0]}),
+            frameRate: 1,
+            repeat:-1
+        })
+        this.anims.create({
+            key:"jump",
+            frames: this.anims.generateFrameNumbers('player',{frames:[1]}),
+            frameRate: 1,
+            repeat:-1
+        })
+        this.anims.create({
+            key:"walkLeft",
+            frames: this.anims.generateFrameNumbers('player',{frames:[2,3]}),
+            frameRate: 10,
+            repeat:-1
+        })
+        this.anims.create({
+            key:"walkRight",
+            frames: this.anims.generateFrameNumbers('player',{frames:[4,5]}),
+            frameRate: 10,
+            repeat:-1
+        })
+        
         this.player = this.make.sprite(new Player({
             scene: this,
             x:780,
@@ -33,7 +58,7 @@ export default class Tower2_4from3 extends Phaser.Scene
         }),true)
         this.physics.add.existing(this.player)
         this.player.body.setCollideWorldBounds(true, 0, 0)
-        this.player.setScale(.07,.07)
+        this.player.setScale(.2,.2)
 
         this.wallColor = 0x4c4d43
         this.blockColor = 0xb2b39b
@@ -139,24 +164,32 @@ export default class Tower2_4from3 extends Phaser.Scene
                 this.player.body.setVelocity(0)
             }
         } )
+        
+        this.player.play('idle',true)
     }
 
     update() {
         let character = this.player.body
         
         if (this.cursors.up.isDown && (character.onFloor())) {
-            character.setVelocityY(-100)
+            character.setVelocityY(-150)
         }
         if (this.cursors.right.isDown) {
             if (character.velocity.x < 25) character.setVelocityX(character.velocity.x+2)
-                character.setAccelerationX(50)
+                character.setAccelerationX(75)
+            this.player.play('walkRight',true)
         }
         else if (this.cursors.left.isDown) {
             if (character.velocity.x > -25) character.setVelocityX(character.velocity.x-2)
-            character.setAccelerationX(-50)
+            character.setAccelerationX(-75)
+            this.player.play('walkLeft',true)
         }
         else {
             character.setAccelerationX(-character.velocity.x*4)
+            this.player.play('idle',true)
+        }
+        if (!character.onFloor()) {
+            this.player.play('jump',true)
         }
 
         if (character.x > 785 && character.y > 250) {
