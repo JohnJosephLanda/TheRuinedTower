@@ -62,6 +62,10 @@ export default class EasyTower2_4from3 extends Phaser.Scene
 
         this.wallColor = 0x4c4d43
         this.blockColor = 0xb2b39b
+        
+        this.firstPlat = this.add.rectangle(680,430,50,10,this.blockColor)
+        this.physics.add.existing(this.firstPlat, true)
+        this.physics.add.collider(this.firstPlat, this.player)
 
         // path after completing the room on the right
         this.secondPlat = this.add.rectangle(700,200,100,30,this.blockColor)
