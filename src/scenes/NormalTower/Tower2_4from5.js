@@ -4,7 +4,7 @@ import Player from "../../sprites/Player.js"
 import player from "../../sprites/PlayerStylesheet.png"
 import bg0 from "../../media/skybg.png" 
 
-export default class Tower5fromTop extends Phaser.Scene
+export default class Tower2_4from5 extends Phaser.Scene
 {
     // player;
     preload()
@@ -20,6 +20,10 @@ export default class Tower5fromTop extends Phaser.Scene
 
         this.bg = this.add.image(0,0,'back')
         this.bg.setOrigin(0, 0)
+        
+        const arrowTo3 = this.add.text(750, 338, "➡", { font: "40px Fantasy",fill: 'white' })
+        const arrowTo5 = this.add.text(113, 5, "↑", { font: "30px Fantasy",fill: 'white' })
+        const arrowFrom3 = this.add.text(750, 110, "←", { font: "40px Fantasy",fill: 'white' })
         
         this.anims.create({
             key:"idle",
@@ -49,7 +53,7 @@ export default class Tower5fromTop extends Phaser.Scene
         this.player = this.make.sprite(new Player({
             scene: this,
             x:780,
-            y:90,
+            y:140,
             img: 'player'
         }),true)
         this.physics.add.existing(this.player)
@@ -58,106 +62,91 @@ export default class Tower5fromTop extends Phaser.Scene
 
         this.wallColor = 0x4c4d43
         this.blockColor = 0xb2b39b
-
-        this.bottomPlat = this.add.rectangle(120,480,50,10,this.blockColor)
-        this.physics.add.existing(this.bottomPlat, true)
-        this.physics.add.collider(this.bottomPlat, this.player)
-
-        this.firstPlat = this.add.rectangle(160,440,20,10,this.blockColor)
+        
+        this.firstPlat = this.add.rectangle(680,430,50,10,this.blockColor)
         this.physics.add.existing(this.firstPlat, true)
         this.physics.add.collider(this.firstPlat, this.player)
-        
-        this.secondPlat = this.add.rectangle(110,420,30,20,this.blockColor)
+
+        // path after completing the room on the right
+        this.secondPlat = this.add.rectangle(700,200,100,30,this.blockColor)
         this.physics.add.existing(this.secondPlat, true)
         this.physics.add.collider(this.secondPlat, this.player)
-        
-        this.thirdPlat = this.add.rectangle(115,365,30,10,this.blockColor)
+
+        this.thirdPlat = this.add.rectangle(700,300,100,30,this.blockColor)
         this.physics.add.existing(this.thirdPlat, true)
         this.physics.add.collider(this.thirdPlat, this.player)
         
-        this.fourthPlat = this.add.rectangle(200,365,50,10,this.blockColor)
+        this.fourthPlat = this.add.rectangle(700,300,100,30,this.blockColor)
         this.physics.add.existing(this.fourthPlat, true)
         this.physics.add.collider(this.fourthPlat, this.player)
         
-        this.fifthPlat = this.add.rectangle(320,365,50,10,this.blockColor)
+        this.fifthPlat = this.add.rectangle(500,280,75,30,this.blockColor)
         this.physics.add.existing(this.fifthPlat, true)
         this.physics.add.collider(this.fifthPlat, this.player)
         
-        this.sixthPlat = this.add.rectangle(450,340,50,10,this.blockColor)
+        this.sixthPlat = this.add.rectangle(350,320,75,30,this.blockColor)
         this.physics.add.existing(this.sixthPlat, true)
         this.physics.add.collider(this.sixthPlat, this.player)
         
-        this.seventhPlat = this.add.rectangle(670,480,30,20,this.blockColor)
+        this.seventhPlat = this.add.rectangle(120,270,75,30,this.blockColor)
         this.physics.add.existing(this.seventhPlat, true)
         this.physics.add.collider(this.seventhPlat, this.player)
         
-        this.eighthPlat = this.add.rectangle(740,450,30,10,this.blockColor)
+        this.eighthPlat = this.add.rectangle(120,210,50,10,this.blockColor)
         this.physics.add.existing(this.eighthPlat, true)
         this.physics.add.collider(this.eighthPlat, this.player)
         
-        this.ninthPlat = this.add.rectangle(740,400,30,10,this.blockColor)
+        this.ninthPlat = this.add.rectangle(120,170,50,10,this.blockColor)
         this.physics.add.existing(this.ninthPlat, true)
         this.physics.add.collider(this.ninthPlat, this.player)
-        
-        this.tenthPlat = this.add.rectangle(738,350,40,10,this.blockColor)
+
+        this.tenthPlat = this.add.rectangle(320,150,50,10,this.blockColor)
         this.physics.add.existing(this.tenthPlat, true)
         this.physics.add.collider(this.tenthPlat, this.player)
         
-        this.eleventhPlat = this.add.rectangle(700,320,30,10,this.blockColor)
+        this.eleventhPlat = this.add.rectangle(540,100,20,10,this.blockColor)
         this.physics.add.existing(this.eleventhPlat, true)
         this.physics.add.collider(this.eleventhPlat, this.player)
         
-        this.twelfthPlat = this.add.rectangle(703,270,40,10,this.blockColor)
+        this.twelfthPlat = this.add.rectangle(120,100,50,10,this.blockColor)
         this.physics.add.existing(this.twelfthPlat, true)
         this.physics.add.collider(this.twelfthPlat, this.player)
         
-        this.thirtheenthPlat = this.add.rectangle(500,255,70,40,this.blockColor)
-        this.physics.add.existing(this.thirtheenthPlat, true)
-        this.physics.add.collider(this.thirtheenthPlat, this.player)
-        
-        this.fourteenthPlat = this.add.rectangle(350,280,70,50,this.blockColor)
-        this.physics.add.existing(this.fourteenthPlat, true)
-        this.physics.add.collider(this.fourteenthPlat, this.player)
-        
-        this.fifteenthPlat = this.add.rectangle(200,280,85,55,this.blockColor)
-        this.physics.add.existing(this.fifteenthPlat, true)
-        this.physics.add.collider(this.fifteenthPlat, this.player)
-        
-        this.sixteenthPlat = this.add.rectangle(120,210,50,20,this.blockColor)
-        this.physics.add.existing(this.sixteenthPlat, true)
-        this.physics.add.collider(this.sixteenthPlat, this.player)
-        
-        this.seventeenthPlat = this.add.rectangle(300,180,60,30,this.blockColor)
-        this.physics.add.existing(this.seventeenthPlat, true)
-        this.physics.add.collider(this.seventeenthPlat, this.player)
-        
-        this.topPlat = this.add.rectangle(575,140,50,20,this.blockColor)
+        this.topPlat = this.add.rectangle(120,50,50,10,this.blockColor)
         this.physics.add.existing(this.topPlat, true)
         this.physics.add.collider(this.topPlat, this.player)
         
+        this.bottomPlat = this.add.rectangle(740,460,50,10,this.blockColor)
+        this.physics.add.existing(this.bottomPlat, true)
+        this.physics.add.collider(this.bottomPlat, this.player)
+
         this.leftWall = this.add.rectangle(50,250,100,500,this.wallColor)
         this.physics.add.existing(this.leftWall, true)
         this.physics.add.collider(this.leftWall, this.player)
 
-        this.rightWall = this.add.rectangle(775,300,50,400,this.wallColor)
-        this.physics.add.existing(this.rightWall, true)
-        this.physics.add.collider(this.rightWall, this.player)
-
-        this.skyWallPlat = this.add.rectangle(575,400,50,200,this.wallColor)
-        this.physics.add.existing(this.skyWallPlat, true)
-        this.physics.add.collider(this.skyWallPlat, this.player)
-
-        this.skyWall = this.add.rectangle(670,330,30,200,this.wallColor)
+        this.bottomRightWall = this.add.rectangle(775,450,50,150,this.wallColor)
+        this.physics.add.existing(this.bottomRightWall, true)
+        this.physics.add.collider(this.bottomRightWall, this.player)
+        
+        this.middleRightWall = this.add.rectangle(775,250,50,200,this.wallColor)
+        this.physics.add.existing(this.middleRightWall, true)
+        this.physics.add.collider(this.middleRightWall, this.player)
+        
+        this.topRightWall = this.add.rectangle(775,50,50,150,this.wallColor)
+        this.physics.add.existing(this.topRightWall, true)
+        this.physics.add.collider(this.topRightWall, this.player)
+        
+        this.skyWall = this.add.rectangle(575,100,50,200,this.wallColor)
         this.physics.add.existing(this.skyWall, true)
         this.physics.add.collider(this.skyWall, this.player)
-        
+
         this.cursors = this.input.keyboard.createCursorKeys()
         this.pauseButton = this.add.text(0, 10, '▐▐', { font: "30px Garamond",fill: '585859',style:"italic", fixedHeight: '35', fixedWidth: '80', align: 'center' })
         .setInteractive()
         .on('pointerdown', () => { 
             let paused = true
-            this.scene.launch("pauseScreen",{scene:"tower5fromtop"})
-            this.scene.sleep("tower5fromtop")
+            this.scene.launch("pauseScreen",{scene:"tower2_4from3"})
+            this.scene.sleep("tower2_4from3")
             while (this.scene.isSleeping()) {
                 this.player.body.setVelocity(0)
             }
@@ -190,14 +179,20 @@ export default class Tower5fromTop extends Phaser.Scene
             this.player.play('jump',true)
         }
 
-        if (character.x > 785) {
-            this.scene.start("towertop")
+        if (character.x > 785 && character.y > 250) {
+            this.scene.start("tower3")
         }
-        if (character.y > 480 & character.x > 575) {
-            this.scene.start("tower2_4from3")
+        if (character.x > 785 && character.y < 250) {
+            this.scene.start("tower3from4")
         }
-        else if (character.y > 480) {
-            this.scene.start("tower2_4from5")
+        if (character.y < 20) {
+            this.scene.start("tower5")
+        }
+        if (character.y > 480 && character.x > 400) {
+            this.scene.start("tower1from2")
+        }
+        if (character.y > 480 && character.x <= 400) {
+            this.scene.start("tower1from4")
         }
     }
 }
