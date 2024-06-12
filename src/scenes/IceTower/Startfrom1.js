@@ -4,7 +4,7 @@ import Player from "../../sprites/Player.js"
 import player from "../../sprites/PlayerStylesheet.png"
 import bg0 from "../../media/skybg.png" 
 
-export default class Startfrom1 extends Phaser.Scene
+export default class IceStartfrom1 extends Phaser.Scene
 {
     // player;
     preload()
@@ -56,7 +56,7 @@ export default class Startfrom1 extends Phaser.Scene
         this.player.body.setCollideWorldBounds(true, 0, 0)
         this.player.setScale(.13,.13)
         
-        this.wallColor = 0x696567
+        this.wallColor = 0x597175
         
         this.topLeftWall = this.add.rectangle(50,150,100,300,this.wallColor)
         this.physics.add.existing(this.topLeftWall, true)
@@ -105,17 +105,15 @@ export default class Startfrom1 extends Phaser.Scene
             character.setVelocityY(-150)
         }
         if (this.cursors.right.isDown) {
-            if (character.velocity.x < 25) character.setVelocityX(character.velocity.x+2)
-                character.setAccelerationX(75)
+            character.setAccelerationX(50)
             this.player.play('walkRight',true)
         }
         else if (this.cursors.left.isDown) {
-            if (character.velocity.x > -25) character.setVelocityX(character.velocity.x-2)
-            character.setAccelerationX(-75)
+            character.setAccelerationX(-50)
             this.player.play('walkLeft',true)
         }
         else {
-            character.setAccelerationX(-character.velocity.x*4)
+            character.setAccelerationX(0)
             this.player.play('idle',true)
         }
         if (!character.onFloor()) {

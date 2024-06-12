@@ -16,7 +16,12 @@ export default class Pause extends Phaser.Scene
         .on('pointerdown', () => { 
             this.scene.wake(this.prevScene)
             this.scene.stop("pauseScreen");
-            
+        } )
+        this.quitButton = this.add.text(315, 330, 'Back to Title', { font: "30px Garamond",fill: 'white',style:"italic", fixedHeight: '60', fixedWidth: '160', align: 'center' })
+        .setInteractive()
+        .on('pointerdown', () => { 
+            this.scene.stop(this.prevScene)
+            this.scene.start('titlescreen')
         } )
 
     }
