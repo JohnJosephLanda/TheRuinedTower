@@ -58,14 +58,6 @@ export default class EasyTower3from4 extends Phaser.Scene
 
         this.wallColor = 0x696567
         this.blockColor = 0x91917e
-        
-        this.base = this.add.rectangle(400,480,800,50,this.blockColor)
-        this.physics.add.existing(this.base, true)
-        this.physics.add.collider(this.base, this.player)
-        
-        this.recoveryPlat = this.add.rectangle(150,450,70,20,this.blockColor)
-        this.physics.add.existing(this.recoveryPlat, true)
-        this.physics.add.collider(this.recoveryPlat, this.player)
 
         this.firstPlat = this.add.rectangle(110,400,100,10,this.blockColor)
         this.physics.add.existing(this.firstPlat, true)
@@ -159,6 +151,9 @@ export default class EasyTower3from4 extends Phaser.Scene
         }
         else if (character.x < 5) {
             this.scene.start("easytower2_4from3")
+        }
+        if (character.y > 480) {
+            this.scene.start("easytower3")
         }
     }
 }

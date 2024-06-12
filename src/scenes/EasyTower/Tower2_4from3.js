@@ -62,18 +62,6 @@ export default class EasyTower2_4from3 extends Phaser.Scene
 
         this.wallColor = 0x4c4d43
         this.blockColor = 0xb2b39b
-        
-        this.base = this.add.rectangle(400,450,800,150,this.blockColor)
-        this.physics.add.existing(this.base, true)
-        this.physics.add.collider(this.base, this.player)
-        
-        this.recoveryPlat = this.add.rectangle(620,370,100,30,this.blockColor)
-        this.physics.add.existing(this.recoveryPlat, true)
-        this.physics.add.collider(this.recoveryPlat, this.player)
-        
-        this.recoveryPlat2 = this.add.rectangle(660,340,100,30,this.blockColor)
-        this.physics.add.existing(this.recoveryPlat2, true)
-        this.physics.add.collider(this.recoveryPlat2, this.player)
 
         // path after completing the room on the right
         this.secondPlat = this.add.rectangle(700,200,100,30,this.blockColor)
@@ -196,6 +184,9 @@ export default class EasyTower2_4from3 extends Phaser.Scene
         }
         if (character.y < 20) {
             this.scene.start("easytower5")
+        }
+        if (character.y > 480) {
+            this.scene.start("easytower2_4from3")
         }
     }
 }
