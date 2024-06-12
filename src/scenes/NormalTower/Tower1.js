@@ -1,6 +1,7 @@
 import Phaser from "phaser"
 
 import Player from "../../sprites/Player"
+import bg0 from "../../media/wall.png" 
 
 export default class Tower1 extends Phaser.Scene
 {
@@ -8,6 +9,7 @@ export default class Tower1 extends Phaser.Scene
     preload()
     {
         this.load.image('player','src/sprites/PlayerStylesheet.png')
+        this.load.image('back', bg0);
     }
 
     create()
@@ -23,11 +25,18 @@ export default class Tower1 extends Phaser.Scene
         // this.physics.add.existing(player)
         // player.body.setCollideWorldBounds(true, 0, 0)
 
+        this.width = this.cameras.main.width
+        this.height = this.cameras.main.height
+
+        this.bg = this.add.image(0,0,'back')
+        this.bg.setOrigin(0, 0)
+
         this.ball = this.add.circle(784, 360, 7, 0xffffff)
         this.physics.add.existing(this.ball)
         this.ball.body.setCollideWorldBounds(true, 0, 0)
 
-        this.imageColor = 0xffffff
+        //this.imageColor = 0xffffff
+        this.imageColor = 0x696567
 
         this.base = this.add.rectangle(400,450,800,150,this.imageColor)
         this.physics.add.existing(this.base, true)

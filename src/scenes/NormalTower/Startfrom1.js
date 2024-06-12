@@ -1,6 +1,7 @@
 import Phaser from "phaser"
 
 import Player from "../../sprites/Player"
+import bg0 from "../../media/skybg.png" 
 
 export default class Startfrom1 extends Phaser.Scene
 {
@@ -8,6 +9,7 @@ export default class Startfrom1 extends Phaser.Scene
     preload()
     {
         this.load.image('player','src/images/player.png')
+        this.load.image('skyback', bg0);
     }
 
     create()
@@ -23,11 +25,25 @@ export default class Startfrom1 extends Phaser.Scene
         // this.physics.add.existing(player)
         // player.body.setCollideWorldBounds(true, 0, 0)
 
+        this.width = this.cameras.main.width
+        this.height = this.cameras.main.height
+
+        this.bg = this.add.image(0,0,'skyback')
+        this.bg.setOrigin(0, 0)
+
+        this.width = this.cameras.main.width
+        this.height = this.cameras.main.height
+
+        this.bg = this.add.image(0,0,'back')
+        this.bg.setScale(Math.max(this.width / this.height, this.height / this.width))
+        this.bg.setOrigin(0, 0)
+
         this.ball = this.add.circle(20, 340, 7, 0xffffff)
         this.physics.add.existing(this.ball)
         this.ball.body.setCollideWorldBounds(true, 0, 0)
         
-        this.imageColor = 0xffffff
+        //this.imageColor = 0xffffff
+        this.imageColor = 0x696567
         
         this.topLeftWall = this.add.rectangle(50,150,100,300,this.imageColor)
         this.physics.add.existing(this.topLeftWall, true)

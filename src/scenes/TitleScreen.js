@@ -1,15 +1,22 @@
 import Phaser from "phaser"
 import sound from "../media/badGuyHere.wav"
+import bg0 from "../media/wall.png" 
 
 export default class TitleScreen extends Phaser.Scene
 {
     preload()
     {
-      this.load.image('back', 'wall.png');
+      this.load.image('back', bg0);
     }
 
     create()
     {
+      this.width = this.cameras.main.width
+      this.height = this.cameras.main.height
+
+      this.bg = this.add.image(0,0,'back')
+      this.bg.setOrigin(0, 0)
+
       const title = this.add.text(400, 150, "The Ruined Tower", { font: "80px Garamond",fill: 'white' })
       title.setOrigin(.5,.5)
 
