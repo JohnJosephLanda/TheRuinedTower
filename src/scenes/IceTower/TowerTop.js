@@ -84,8 +84,8 @@ export default class IceTowerTop extends Phaser.Scene
         .setInteractive()
         .on('pointerdown', () => { 
             let paused = true
-            this.scene.launch("pauseScreen",{scene:"towertop"})
-            this.scene.sleep("towertop")
+            this.scene.launch("pauseScreen",{scene:"icetowertop"})
+            this.scene.sleep("icetowertop")
             while (this.scene.isSleeping()) {
                 this.player.body.setVelocity(0)
             }

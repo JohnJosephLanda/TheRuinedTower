@@ -90,8 +90,8 @@ export default class Startfrom1 extends Phaser.Scene
         .setInteractive()
         .on('pointerdown', () => { 
             let paused = true
-            this.scene.launch("pauseScreen",{scene:"startingPointfrom1"})
-            this.scene.sleep("startingPointfrom1")
+            this.scene.launch("pauseScreen",{scene:"icestartingPointfrom1"})
+            this.scene.sleep("icestartingPointfrom1")
             while (this.scene.isSleeping()) {
                 this.player.body.setVelocity(0)
             }

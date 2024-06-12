@@ -90,8 +90,8 @@ export default class IceStart extends Phaser.Scene
         .setInteractive()
         .on('pointerdown', () => { 
             let paused = true
-            this.scene.launch("pauseScreen",{scene:"startingPoint"})
-            this.scene.sleep("startingPoint")
+            this.scene.launch("pauseScreen",{scene:"icestartingPoint"})
+            this.scene.sleep("icestartingPoint")
             while (this.scene.isSleeping()) {
                 this.player.body.setVelocity(0)
             }
