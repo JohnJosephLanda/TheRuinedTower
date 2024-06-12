@@ -3,6 +3,7 @@ import Phaser from 'phaser'
 import TitleScreen from './scenes/TitleScreen'
 import LevelSelect from './scenes/LevelSelect'
 import Pause from './scenes/Pause'
+import PracticeArea from './scenes/Practice'
 
 import EasyStart from './scenes/EasyTower/Start'
 import EasyStartfrom1 from './scenes/EasyTower/Startfrom1'
@@ -81,6 +82,7 @@ const game = new Phaser.Game(config)
 game.scene.add('titlescreen',TitleScreen)
 game.scene.add('levelselect',LevelSelect)
 game.scene.add("pauseScreen",Pause)
+game.scene.add("practice",PracticeArea)
 
 // normal tower
 game.scene.add("startingPoint",Start)
