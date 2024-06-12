@@ -4,6 +4,7 @@ import TitleScreen from './scenes/TitleScreen'
 import LevelSelect from './scenes/LevelSelect'
 import Pause from './scenes/Pause'
 import PracticeArea from './scenes/Practice'
+import IcePracticeArea from './scenes/IcePractice'
 
 import EasyStart from './scenes/EasyTower/Start'
 import EasyStartfrom1 from './scenes/EasyTower/Startfrom1'
@@ -83,6 +84,7 @@ game.scene.add('titlescreen',TitleScreen)
 game.scene.add('levelselect',LevelSelect)
 game.scene.add("pauseScreen",Pause)
 game.scene.add("practice",PracticeArea)
+game.scene.add("icepractice",IcePracticeArea)
 
 // normal tower
 game.scene.add("startingPoint",Start)

@@ -94,6 +94,9 @@ export default class Practice extends Phaser.Scene
         this.rightWall = this.add.rectangle(775,150,50,300,this.wallColor)
         this.physics.add.existing(this.rightWall, true)
         this.physics.add.collider(this.rightWall, this.player)
+        
+        const text = this.add.text(300, 100, "Normal Practice Area", { font: "30px Garamond",fill: 'white' })
+        const text2 = this.add.text(650, 300, "Ice practice area ➡", { font: "20px Garamond",fill: 'white' })
 
         this.cursors = this.input.keyboard.createCursorKeys()
         this.pauseButton = this.add.text(0, 10, '▐▐', { font: "30px Garamond",fill: '585859',style:"italic", fixedHeight: '35', fixedWidth: '80', align: 'center' })
@@ -134,5 +137,8 @@ export default class Practice extends Phaser.Scene
             this.player.play('jump',true)
         }
 
+        if (character.x > 790) {
+            this.scene.start('icepractice')
+        }
     }
 }
