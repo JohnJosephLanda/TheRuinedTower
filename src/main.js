@@ -130,5 +130,5 @@ game.scene.add("easytower5fromtop",EasyTower5fromTop)
 game.scene.add("easytowertop",EasyTowerTop)
 game.scene.add("easyendingPoint",EasyEnd)
 
-// game.scene.start("titlescreen");
-game.scene.start("easytower3"); // temp to work on level
+game.scene.start("titlescreen");
+// game.scene.start("easytower3"); // temp to work on level
