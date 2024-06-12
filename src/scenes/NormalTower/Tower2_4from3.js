@@ -21,6 +21,10 @@ export default class Tower2_4from3 extends Phaser.Scene
         this.bg = this.add.image(0,0,'back')
         this.bg.setOrigin(0, 0)
         
+        const arrowTo3 = this.add.text(750, 338, "➡", { font: "40px Fantasy",fill: 'white' })
+        const arrowTo5 = this.add.text(113, 5, "↑", { font: "30px Fantasy",fill: 'white' })
+        const arrowFrom3 = this.add.text(750, 110, "←", { font: "40px Fantasy",fill: 'white' })
+        
         this.player = this.make.sprite(new Player({
             scene: this,
             x:780,
@@ -30,10 +34,6 @@ export default class Tower2_4from3 extends Phaser.Scene
         this.physics.add.existing(this.player)
         this.player.body.setCollideWorldBounds(true, 0, 0)
         this.player.setScale(.07,.07)
-
-        const arrowTo3 = this.add.text(750, 338, "➡", { font: "40px Fantasy",fill: 'white' })
-        const arrowTo5 = this.add.text(113, 5, "↑", { font: "30px Fantasy",fill: 'white' })
-        const arrowFrom3 = this.add.text(750, 110, "←", { font: "40px Fantasy",fill: 'white' })
 
         this.wallColor = 0x4c4d43
         this.blockColor = 0xb2b39b
