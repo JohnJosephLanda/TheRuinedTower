@@ -31,7 +31,7 @@ export default class TitleScreen extends Phaser.Scene {
 
         this.ice = this.add.text(550, 250, 'Ice', { font: "40px Garamond",fill: '#AAABAF',style:"italic", backgroundColor: '#484849', fixedHeight: '40', fixedWidth: '100', align: 'center' })
         .setInteractive()
-        .on('pointerdown', () => this.scene.start("startingPoint") )
+        .on('pointerdown', () => this.scene.start("icestartingPoint") )
         .on('pointerover', () => this.enterButtonHoverState(this.ice) )
         .on('pointerout', () => this.enterButtonRestState(this.ice) )
     }

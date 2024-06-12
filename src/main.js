@@ -2,6 +2,24 @@ import Phaser from 'phaser'
 
 import TitleScreen from './scenes/TitleScreen'
 import LevelSelect from './scenes/LevelSelect'
+import Pause from './scenes/Pause'
+
+import IceStart from './scenes/IceTower/Start'
+import IceStartfrom1 from './scenes/IceTower/Startfrom1'
+import IceTower1 from './scenes/IceTower/Tower1'
+import IceTower1from2 from './scenes/IceTower/Tower1from2'
+import IceTower1from4 from './scenes/IceTower/Tower1from4'
+import IceTower2_4 from './scenes/IceTower/Tower2_4'
+import IceTower3 from './scenes/IceTower/Tower3'
+import IceTower3from4 from './scenes/IceTower/Tower3from4'
+import IceTower2_4from3 from './scenes/IceTower/Tower2_4from3'
+import IceTower2_4fromBottom3 from './scenes/IceTower/Tower2_4fromBottom3'
+import IceTower2_4from5 from './scenes/IceTower/Tower2_4from5'
+import IceTower5 from './scenes/IceTower/Tower5'
+import IceTower5fromTop from './scenes/IceTower/Tower5fromTop'
+import IceTowerTop from './scenes/IceTower/TowerTop'
+import IceEnd from './scenes/IceTower/End'
+
 import Start from './scenes/NormalTower/Start'
 import Startfrom1 from './scenes/NormalTower/Startfrom1'
 import Tower1 from './scenes/NormalTower/Tower1'
@@ -17,7 +35,6 @@ import Tower5 from './scenes/NormalTower/Tower5'
 import Tower5fromTop from './scenes/NormalTower/Tower5fromTop'
 import TowerTop from './scenes/NormalTower/TowerTop'
 import End from './scenes/NormalTower/End'
-import Pause from './scenes/Pause'
 
 // var audio = new Audio("../media/badGuyHere.wav");
 // audio.muted = true;
@@ -70,7 +87,21 @@ game.scene.add("towertop",TowerTop)
 game.scene.add("endingPoint",End)
 
 // ice tower
-// need to make
+game.scene.add("icestartingPoint",IceStart)
+game.scene.add("icestartingPointfrom1",IceStartfrom1)
+game.scene.add("icetower1",IceTower1)
+game.scene.add("icetower1from2",IceTower1from2)
+game.scene.add("icetower1from4",IceTower1from4)
+game.scene.add("icetower2_4",IceTower2_4)
+game.scene.add("icetower3",IceTower3)
+game.scene.add("icetower3from4",IceTower3from4)
+game.scene.add("icetower2_4from3",IceTower2_4from3)
+game.scene.add("icetower2_4frombottom3",IceTower2_4fromBottom3)
+game.scene.add("icetower2_4from5",IceTower2_4from5)
+game.scene.add("icetower5",IceTower5)
+game.scene.add("icetower5fromtop",IceTower5fromTop)
+game.scene.add("icetowertop",IceTowerTop)
+game.scene.add("iceendingPoint",IceEnd)
 
 // easy tower
 // need to make
