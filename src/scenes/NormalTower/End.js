@@ -14,40 +14,35 @@ export default class End extends Phaser.Scene
 
     create()
     {
-        // working on adding the player
-
-        // player = new Player({
-        //     scene: this,
-        //     x: 400,
-        //     y: 400,
-        //     img: 'player'
-        // })
-        // this.physics.add.existing(player)
-        // player.body.setCollideWorldBounds(true, 0, 0)
-
         this.width = this.cameras.main.width
         this.height = this.cameras.main.height
 
         this.bg = this.add.image(0,0,'skyback')
         this.bg.setOrigin(0, 0)
-
-        this.ball = this.add.circle(210,450, 7, 0xffffff)
-        this.physics.add.existing(this.ball)
-        this.ball.body.setCollideWorldBounds(true, 0, 0)
+        
+        this.player = this.make.sprite(new Player({
+            scene: this,
+            x:210,
+            y:450,
+            img: 'player'
+        }),true)
+        this.physics.add.existing(this.player)
+        this.player.body.setCollideWorldBounds(true, 0, 0)
+        this.player.setScale(.07,.07)
         
         this.blockColor = 0x91917e
 
         this.firstPlat = this.add.rectangle(210,470,50,20,this.blockColor)
         this.physics.add.existing(this.firstPlat, true)
-        this.physics.add.collider(this.firstPlat, this.ball)
+        this.physics.add.collider(this.firstPlat, this.player)
 
         this.secondPlat = this.add.rectangle(250,450,50,20,this.blockColor)
         this.physics.add.existing(this.secondPlat, true)
-        this.physics.add.collider(this.secondPlat, this.ball)
+        this.physics.add.collider(this.secondPlat, this.player)
         
         this.endPlat = this.add.rectangle(500,420,400,20,this.blockColor)
         this.physics.add.existing(this.endPlat, true)
-        this.physics.add.collider(this.endPlat, this.ball)
+        this.physics.add.collider(this.endPlat, this.player)
 
         const text = this.add.text(100, 20, "Congratulations.", { font: "50px Garamond",fill: 'white' })
         const text2 = this.add.text(300, 250, "You have beaten the tower.", { font: "30px Garamond",fill: 'white' })
@@ -57,10 +52,7 @@ export default class End extends Phaser.Scene
     }
 
     update() {
-        // player.normalPhysics(this.cursors)
-        
-        // testing for the ball
-        let character = this.ball.body
+        let character = this.player.body
         
         if (this.cursors.up.isDown && (character.onFloor())) {
             character.setVelocityY(-150)

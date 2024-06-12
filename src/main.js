@@ -46,8 +46,12 @@ const config = {
 
 const game = new Phaser.Game(config)
 
+// "global" screens
 game.scene.add('titlescreen',TitleScreen)
 game.scene.add('levelselect',LevelSelect)
+game.scene.add("pauseScreen",Pause)
+
+// normal tower
 game.scene.add("startingPoint",Start)
 game.scene.add("startingPointfrom1",Startfrom1)
 game.scene.add("tower1",Tower1)
@@ -62,11 +66,12 @@ game.scene.add("tower5",Tower5)
 game.scene.add("tower5fromtop",Tower5fromTop)
 game.scene.add("towertop",TowerTop)
 game.scene.add("endingPoint",End)
-game.scene.add("pauseScreen",Pause)
 
-// this.load.image('player','src/images/player.png')
-// const playerTexture = new Phaser.Textures.Texture(new Phaser.Textures.TextureManager('game'),'playerIMG','player')
-// const player = new Phaser.GameObjects.Sprite('game',400,500)
+// ice tower
+// need to make
+
+// easy tower
+// need to make
 
 game.scene.start("titlescreen");
 // game.scene.start("endingPoint"); // temp to work on level
