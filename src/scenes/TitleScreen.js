@@ -10,6 +10,10 @@ export default class TitleScreen extends Phaser.Scene
 
     create()
     {
+
+      var audio = new Audio("./media/bigBadGuyHere.wav");
+      audio.play();
+      
       const title = this.add.text(400, 150, "The Ruined Tower", { font: "80px Garamond",fill: 'white' })
       title.setOrigin(.5,.5)
 

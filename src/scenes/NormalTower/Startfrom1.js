@@ -12,6 +12,10 @@ export default class Startfrom1 extends Phaser.Scene
 
     create()
     {
+
+        // var audio = new Audio("./media/bigBadGuyHere.wav");
+        // audio.play();
+
         // working on adding the player
 
         // player = new Player({
