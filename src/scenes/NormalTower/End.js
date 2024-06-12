@@ -28,25 +28,24 @@ export default class End extends Phaser.Scene
         this.width = this.cameras.main.width
         this.height = this.cameras.main.height
 
-        this.bg = this.add.image(0,0,'back')
+        this.bg = this.add.image(0,0,'skyback')
         this.bg.setOrigin(0, 0)
 
         this.ball = this.add.circle(210,450, 7, 0xffffff)
         this.physics.add.existing(this.ball)
         this.ball.body.setCollideWorldBounds(true, 0, 0)
         
-        //this.imageColor = 0xffffff
-        this.imageColor = 0x696567
+        this.blockColor = 0x91917e
 
-        this.firstPlat = this.add.rectangle(210,470,50,20,this.imageColor)
+        this.firstPlat = this.add.rectangle(210,470,50,20,this.blockColor)
         this.physics.add.existing(this.firstPlat, true)
         this.physics.add.collider(this.firstPlat, this.ball)
 
-        this.secondPlat = this.add.rectangle(250,450,50,20,this.imageColor)
+        this.secondPlat = this.add.rectangle(250,450,50,20,this.blockColor)
         this.physics.add.existing(this.secondPlat, true)
         this.physics.add.collider(this.secondPlat, this.ball)
         
-        this.endPlat = this.add.rectangle(500,420,400,20,this.imageColor)
+        this.endPlat = this.add.rectangle(500,420,400,20,this.blockColor)
         this.physics.add.existing(this.endPlat, true)
         this.physics.add.collider(this.endPlat, this.ball)
 

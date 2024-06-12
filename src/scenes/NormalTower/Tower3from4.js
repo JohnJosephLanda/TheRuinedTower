@@ -35,55 +35,56 @@ export default class Tower3from4 extends Phaser.Scene
         this.physics.add.existing(this.ball)
         this.ball.body.setCollideWorldBounds(true, 0, 0)
 
-        this.imageColor = 0xffffff
-        
-        this.bottomLeftWall = this.add.rectangle(50,450,100,150,this.imageColor)
-        this.physics.add.existing(this.bottomLeftWall, true)
-        this.physics.add.collider(this.bottomLeftWall, this.ball)
-        
-        this.middleLeftWall = this.add.rectangle(50,250,100,200,this.imageColor)
-        this.physics.add.existing(this.middleLeftWall, true)
-        this.physics.add.collider(this.middleLeftWall, this.ball)
-        
-        this.topLeftWall = this.add.rectangle(50,50,100,150,this.imageColor)
-        this.physics.add.existing(this.topLeftWall, true)
-        this.physics.add.collider(this.topLeftWall, this.ball)
+        this.wallColor = 0x696567
+        this.blockColor = 0x91917e
 
-        this.firstPlat = this.add.rectangle(110,400,40,10,this.imageColor)
+        this.firstPlat = this.add.rectangle(110,400,40,10,this.blockColor)
         this.physics.add.existing(this.firstPlat, true)
         this.physics.add.collider(this.firstPlat, this.ball)
         
-        this.secondPlat = this.add.rectangle(270,400,30,10,this.imageColor)
+        this.secondPlat = this.add.rectangle(270,400,30,10,this.blockColor)
         this.physics.add.existing(this.secondPlat, true)
         this.physics.add.collider(this.secondPlat, this.ball)
         
-        this.thirdPlat = this.add.rectangle(350,360,30,10,this.imageColor)
+        this.thirdPlat = this.add.rectangle(350,360,30,10,this.blockColor)
         this.physics.add.existing(this.thirdPlat, true)
         this.physics.add.collider(this.thirdPlat, this.ball)
         
-        this.fourthPlat = this.add.rectangle(400,320,30,10,this.imageColor)
+        this.fourthPlat = this.add.rectangle(400,320,30,10,this.blockColor)
         this.physics.add.existing(this.fourthPlat, true)
         this.physics.add.collider(this.fourthPlat, this.ball)
         
-        this.fifthPlat = this.add.rectangle(500,320,20,10,this.imageColor)
+        this.fifthPlat = this.add.rectangle(500,320,20,10,this.blockColor)
         this.physics.add.existing(this.fifthPlat, true)
         this.physics.add.collider(this.fifthPlat, this.ball)
         
-        this.sixthPlat = this.add.rectangle(530,280,20,10,this.imageColor)
+        this.sixthPlat = this.add.rectangle(530,280,20,10,this.blockColor)
         this.physics.add.existing(this.sixthPlat, true)
         this.physics.add.collider(this.sixthPlat, this.ball)
         
-        this.seventhPlat = this.add.rectangle(500,250,20,10,this.imageColor)
+        this.seventhPlat = this.add.rectangle(500,250,20,10,this.blockColor)
         this.physics.add.existing(this.seventhPlat, true)
         this.physics.add.collider(this.seventhPlat, this.ball)
         
-        this.eigthPlat = this.add.rectangle(500,200,30,10,this.imageColor)
+        this.eigthPlat = this.add.rectangle(500,200,30,10,this.blockColor)
         this.physics.add.existing(this.eigthPlat, true)
         this.physics.add.collider(this.eigthPlat, this.ball)
         
-        this.topPlat = this.add.rectangle(300,180,50,10,this.imageColor)
+        this.topPlat = this.add.rectangle(300,180,50,10,this.blockColor)
         this.physics.add.existing(this.topPlat, true)
         this.physics.add.collider(this.topPlat, this.ball)
+        
+        this.bottomLeftWall = this.add.rectangle(50,450,100,150,this.wallColor)
+        this.physics.add.existing(this.bottomLeftWall, true)
+        this.physics.add.collider(this.bottomLeftWall, this.ball)
+        
+        this.middleLeftWall = this.add.rectangle(50,250,100,200,this.wallColor)
+        this.physics.add.existing(this.middleLeftWall, true)
+        this.physics.add.collider(this.middleLeftWall, this.ball)
+        
+        this.topLeftWall = this.add.rectangle(50,50,100,150,this.wallColor)
+        this.physics.add.existing(this.topLeftWall, true)
+        this.physics.add.collider(this.topLeftWall, this.ball)
 
         this.cursors = this.input.keyboard.createCursorKeys()
         this.pauseButton = this.add.text(0, 10, '▐▐', { font: "30px Garamond",fill: '585859',style:"italic", fixedHeight: '35', fixedWidth: '80', align: 'center' })
