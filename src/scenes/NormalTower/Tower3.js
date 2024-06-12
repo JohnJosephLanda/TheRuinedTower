@@ -119,7 +119,7 @@ export default class Tower3 extends Phaser.Scene
         else if (character.x < 5) {
             this.scene.start("tower2_4from3")
         }
-        if (character.y > 485) {
+        if (character.y > 480) {
             this.scene.start("startingPoint")
         }
     }
