@@ -1,6 +1,7 @@
 import Phaser from "phaser"
 
 import Player from "../../sprites/Player"
+import player from "../../sprites/PlayerStylesheet.png"
 import bg0 from "../../media/skybg.png" 
 
 export default class End extends Phaser.Scene
@@ -53,7 +54,7 @@ export default class End extends Phaser.Scene
         }),true)
         this.physics.add.existing(this.player)
         this.player.body.setCollideWorldBounds(true, 0, 0)
-        this.player.setScale(.2,.2)
+        this.player.setScale(.13,.13)
         
         this.blockColor = 0x91917e
 
@@ -102,7 +103,7 @@ export default class End extends Phaser.Scene
             this.player.play('jump',true)
         }
 
-        if (character.y > 485 || character.x > 785 || character.x < 5) {
+        if (character.y > 480 || character.x > 785 || character.x < 5) {
             this.scene.start("titlescreen")
         }
     }

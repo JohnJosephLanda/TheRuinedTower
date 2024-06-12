@@ -54,7 +54,7 @@ export default class Tower1from4 extends Phaser.Scene
         }),true)
         this.physics.add.existing(this.player)
         this.player.body.setCollideWorldBounds(true, 0, 0)
-        this.player.setScale(.2,.2)
+        this.player.setScale(.13,.13)
 
         this.wallColor = 0x4c4d43
         this.blockColor = 0xb2b39b

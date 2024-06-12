@@ -58,7 +58,7 @@ export default class Tower2_4fromBottom3 extends Phaser.Scene
         }),true)
         this.physics.add.existing(this.player)
         this.player.body.setCollideWorldBounds(true, 0, 0)
-        this.player.setScale(.2,.2)
+        this.player.setScale(.13,.13)
 
         this.wallColor = 0x4c4d43
         this.blockColor = 0xb2b39b
@@ -66,19 +66,6 @@ export default class Tower2_4fromBottom3 extends Phaser.Scene
         this.firstPlat = this.add.rectangle(680,430,50,10,this.blockColor)
         this.physics.add.existing(this.firstPlat, true)
         this.physics.add.collider(this.firstPlat, this.player)
-        
-        // little speedrun skip for fun
-        this.skipPlat1 = this.add.rectangle(280,440,20,5,this.blockColor)
-        this.physics.add.existing(this.skipPlat1, true)
-        this.physics.add.collider(this.skipPlat1, this.player)
-        
-        this.skipPlat2 = this.add.rectangle(100,400,50,10,this.blockColor)
-        this.physics.add.existing(this.skipPlat2, true)
-        this.physics.add.collider(this.skipPlat2, this.player)
-        
-        this.skipPlat3 = this.add.rectangle(200,350,50,10,this.blockColor)
-        this.physics.add.existing(this.skipPlat3, true)
-        this.physics.add.collider(this.skipPlat3, this.player)
 
         // path after completing the room on the right
         this.secondPlat = this.add.rectangle(700,200,100,30,this.blockColor)
