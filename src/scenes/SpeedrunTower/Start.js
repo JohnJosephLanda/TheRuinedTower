@@ -91,7 +91,7 @@ export default class SpeedrunStart extends Phaser.Scene
         .on('pointerdown', () => { 
             let paused = true
             this.scene.launch("pauseScreen",{scene:"speedrunstartingPoint"})
-            this.scene.sleep("startingPoint")
+            this.scene.sleep("speedrunstartingPoint")
             while (this.scene.isSleeping()) {
                 this.player.body.setVelocity(0)
             }

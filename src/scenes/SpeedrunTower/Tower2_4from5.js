@@ -52,7 +52,7 @@ export default class SpeedrunTower2_4from5 extends Phaser.Scene
         
         this.player = this.make.sprite(new Player({
             scene: this,
-            x:780,
+            x:320,
             y:140,
             img: 'player'
         }),true)
@@ -145,8 +145,8 @@ export default class SpeedrunTower2_4from5 extends Phaser.Scene
         .setInteractive()
         .on('pointerdown', () => { 
             let paused = true
-            this.scene.launch("pauseScreen",{scene:"speedruntower2_4from3"})
-            this.scene.sleep("speedruntower2_4from3")
+            this.scene.launch("pauseScreen",{scene:"speedruntower2_4from5"})
+            this.scene.sleep("speedruntower2_4from5")
             while (this.scene.isSleeping()) {
                 this.player.body.setVelocity(0)
             }

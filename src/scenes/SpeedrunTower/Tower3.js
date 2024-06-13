@@ -113,7 +113,7 @@ export default class SpeedrunTower3 extends Phaser.Scene
         .setInteractive()
         .on('pointerdown', () => { 
             let paused = true
-            this.scene.launch("pauseScreen",{scene:"speedrunr3"})
+            this.scene.launch("pauseScreen",{scene:"speedruntower3"})
             this.scene.sleep("speedruntower3")
             while (this.scene.isSleeping()) {
                 this.player.body.setVelocity(0)
