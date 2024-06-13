@@ -102,6 +102,9 @@ export default class SpeedrunStart extends Phaser.Scene
         } )
         
         this.player.play('idle',true)
+
+        localStorage.setItem("m", 0);
+        localStorage.setItem("s", 0);
     }
 
     update() {

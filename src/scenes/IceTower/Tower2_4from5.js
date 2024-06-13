@@ -52,8 +52,8 @@ export default class IceTower2_4from5 extends Phaser.Scene
         
         this.player = this.make.sprite(new Player({
             scene: this,
-            x:780,
-            y:140,
+            x:320,
+            y:20,
             img: 'player'
         }),true)
         this.physics.add.existing(this.player)
