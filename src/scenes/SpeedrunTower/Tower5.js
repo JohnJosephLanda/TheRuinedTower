@@ -3,6 +3,7 @@ import Phaser from "phaser"
 import Player from "../../sprites/Player.js"
 import player from "../../sprites/PlayerStylesheet.png"
 import bg0 from "../../media/skybg.png" 
+import Timer from "../Time.js";
 
 export default class SpeedrunTower5 extends Phaser.Scene
 {
@@ -164,6 +165,54 @@ export default class SpeedrunTower5 extends Phaser.Scene
         } )
         
         this.player.play('idle',true)
+
+
+        // TIMER
+
+        this.timerText = this.add.text(100, 300, "", { font: "30px Garamond", fill: 'white' })
+        this.timerOn = true;
+        this.currentMins = 0;
+        this.currentSecs = 0;
+        this.minsDisplay = "";
+        this.secsDisplay = "";
+        this.overallDisplay = "";
+
+
+        this.time.addEvent({
+            delay: 1000,
+            callback: this.timerFunc,
+            callbackScope: this,
+            loop: true
+        });
+
+    }
+
+
+    timerFunc(){
+
+        if (this.timerOn){
+
+            if (this.currentSecs == 59){
+                this.currentSecs = 0;
+                this.currentMins++;
+            } else {
+                this.currentSecs++;
+            }
+
+            if (this.currentSecs < 10){
+                this.secsDisplay = "0" + String(this.currentSecs);
+            } else {
+                this.secsDisplay = "" + String(this.currentSecs);
+            }
+
+            this.minsDisplay = "" + String(this.currentMins);
+
+            this.overallDisplay = String(this.minsDisplay) + ":" + String(this.secsDisplay);
+
+            this.timerText.setText(this.overallDisplay);
+
+        }
+
     }
 
     update() {
@@ -191,12 +240,15 @@ export default class SpeedrunTower5 extends Phaser.Scene
         }
 
         if (character.x > 785) {
+            localStorage.setItem(11, this.overallDisplay);
             this.scene.start("speedruntowertop")
         }
         if (character.y > 480 & character.x > 575) {
+            localStorage.setItem(12, this.overallDisplay);
             this.scene.start("speedruntower2_4from3")
         }
         else if (character.y > 480) {
+            localStorage.setItem(13, this.overallDisplay);
             this.scene.start("speedruntower2_4from5")
         }
     }

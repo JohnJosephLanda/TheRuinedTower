@@ -3,6 +3,7 @@ import Phaser from "phaser"
 import Player from "../../sprites/Player.js"
 import player from "../../sprites/PlayerStylesheet.png"
 import bg0 from "../../media/skybg.png" 
+import Timer from "../Time.js";
 
 export default class SpeedrunTowerTop extends Phaser.Scene
 {
@@ -119,6 +120,7 @@ export default class SpeedrunTowerTop extends Phaser.Scene
         }
 
         if (character.x < 5) {
+            localStorage.setItem(14, this.overallDisplay);
             this.scene.start("speedruntower5fromtop")
         }
         if (character.y < 20) {

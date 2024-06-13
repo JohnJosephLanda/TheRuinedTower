@@ -1,45 +1,44 @@
 export default class Time {
 
     constructor(){
-        this.list = [];
-    }
-
-    addTimeToLst(time){
-        this.list[this.list.length - 1] = time;
+        this.mins = [];
+        this.secs = [];
     }
 
     sumofLst(){
-        s = 0;
-        for (let i = 0; i < this.list.length; i++){
-            s += this.list[i];
-        }
-        return s;
-    }
-
-    timerFunction(){
         
-        if (currentSecs == 59){
-            currentSecs = 0;
-            currentMins++;
-        } else {
-            currentSecs++;
+        for (let i = 0; i < localStorage.length; i++){
+            if (localStorage.getItem(i) != null){
+                let mins = localStorage.getItem(i).split(":")[0];
+                let secs = localStorage.getItem(i).split(":")[1];
+                this.mins.append(mins);
+                this.secs.append(secs);
+            }
         }
 
-        if (currentSecs < 10){
-            secsDisplay = "0" + String(currentSecs);
-        } else {
-            secsDisplay = "" + String(currentSecs);
+        let totalMins = 0;
+        let totalSecs = 0;
+
+        for (let i = 0; i < this.mins.length; i++){
+            totalMins += this.mins[i];
         }
 
-        minsDisplay = "" + String(currentMins);
+        for (let i = 0; i < this.secs.length; i++){
+            totalSecs += this.secs[i];
+        }
 
-        overallDisplay = minsDisplay + ":" + secsDisplay;
+        // ex
+        // mins = 4
+        // secs = 69
 
-        return overallDisplay;
+        totalMins += totalSecs / 60;
+        totalSecs = totalSecs % 60;
 
-
+        return [String(totalMins), String(totalSecs)];
 
     }
+
+    
 
 
 
