@@ -51,6 +51,22 @@ import Tower5fromTop from './scenes/NormalTower/Tower5fromTop'
 import TowerTop from './scenes/NormalTower/TowerTop'
 import End from './scenes/NormalTower/End'
 
+import SpeedrunStart from './scenes/SpeedrunTower/Start'
+import SpeedrunStartfrom1 from './scenes/SpeedrunTower/Startfrom1'
+import SpeedrunTower1 from './scenes/SpeedrunTower/Tower1'
+import SpeedrunTower1from2 from './scenes/SpeedrunTower/Tower1from2'
+import SpeedrunTower1from4 from './scenes/SpeedrunTower/Tower1from4'
+import SpeedrunTower2_4 from './scenes/SpeedrunTower/Tower2_4'
+import SpeedrunTower3 from './scenes/SpeedrunTower/Tower3'
+import SpeedrunTower3from4 from './scenes/SpeedrunTower/Tower3from4'
+import SpeedrunTower2_4from3 from './scenes/SpeedrunTower/Tower2_4from3'
+import SpeedrunTower2_4fromBottom3 from './scenes/SpeedrunTower/Tower2_4fromBottom3'
+import SpeedrunTower2_4from5 from './scenes/SpeedrunTower/Tower2_4from5'
+import SpeedrunTower5 from './scenes/SpeedrunTower/Tower5'
+import SpeedrunTower5fromTop from './scenes/SpeedrunTower/Tower5fromTop'
+import SpeedrunTowerTop from './scenes/SpeedrunTower/TowerTop'
+import SpeedrunEnd from './scenes/SpeedrunTower/End'
+
 // var audio = new Audio("../media/badGuyHere.wav");
 // audio.muted = true;
 // audio.play();
@@ -133,6 +149,23 @@ game.scene.add("easytower5",EasyTower5)
 game.scene.add("easytower5fromtop",EasyTower5fromTop)
 game.scene.add("easytowertop",EasyTowerTop)
 game.scene.add("easyendingPoint",EasyEnd)
+
+// speedrun tower
+game.scene.add("speedrunstartingPoint",SpeedrunStart)
+game.scene.add("speedrunstartingPointfrom1",SpeedrunStartfrom1)
+game.scene.add("speedruntower1",SpeedrunTower1)
+game.scene.add("speedruntower1from2",SpeedrunTower1from2)
+game.scene.add("speedruntower1from4",SpeedrunTower1from4)
+game.scene.add("speedruntower2_4",SpeedrunTower2_4)
+game.scene.add("speedruntower3",SpeedrunTower3)
+game.scene.add("speedruntower3from4",SpeedrunTower3from4)
+game.scene.add("speedruntower2_4from3",SpeedrunTower2_4from3)
+game.scene.add("speedruntower2_4frombottom3",SpeedrunTower2_4fromBottom3)
+game.scene.add("speedruntower2_4from5",SpeedrunTower2_4from5)
+game.scene.add("speedrunspeedruntower5",SpeedrunTower5)
+game.scene.add("speedruntower5fromtop",SpeedrunTower5fromTop)
+game.scene.add("speedruntowertop",SpeedrunTowerTop)
+game.scene.add("speedrunendingPoint",SpeedrunEnd)
 
 game.scene.start("titlescreen");
 // game.scene.start("easytower5"); // temp to work on level
