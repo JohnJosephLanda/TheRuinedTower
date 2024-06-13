@@ -120,7 +120,56 @@ export default class SpeedrunTower3from4 extends Phaser.Scene
         } )
         
         this.player.play('idle',true)
+
+
+        // TIMER
+
+        this.timerText = this.add.text(100, 300, "", { font: "30px Garamond", fill: 'white' })
+        this.timerOn = true;
+        this.currentMins = 0;
+        this.currentSecs = 0;
+        this.minsDisplay = "";
+        this.secsDisplay = "";
+        this.overallDisplay = "";
+
+
+        this.time.addEvent({
+            delay: 1000,
+            callback: this.timerFunc,
+            callbackScope: this,
+            loop: true
+        });
+
     }
+
+
+    timerFunc(){
+
+        if (this.timerOn){
+
+            if (this.currentSecs == 59){
+                this.currentSecs = 0;
+                this.currentMins++;
+            } else {
+                this.currentSecs++;
+            }
+
+            if (this.currentSecs < 10){
+                this.secsDisplay = "0" + String(this.currentSecs);
+            } else {
+                this.secsDisplay = "" + String(this.currentSecs);
+            }
+
+            this.minsDisplay = "" + String(this.currentMins);
+
+            this.overallDisplay = String(this.minsDisplay) + ":" + String(this.secsDisplay);
+
+            this.timerText.setText(this.overallDisplay);
+
+        }
+
+    }
+
 
     update() {
         let character = this.player.body
@@ -147,12 +196,15 @@ export default class SpeedrunTower3from4 extends Phaser.Scene
         }
 
         if (character.x < 5 && character.y > 250) {
+            localStorage.setItem(34, this.overallDisplay);
             this.scene.start("speedruntower2_4frombottom3")
         }
         else if (character.x < 5) {
+            localStorage.setItem(35, this.overallDisplay);
             this.scene.start("speedruntower2_4from3")
         }
         if (character.y > 480) {
+            localStorage.setItem(36, this.overallDisplay);
             this.scene.start("speedrunstartingPoint")
         }
     }

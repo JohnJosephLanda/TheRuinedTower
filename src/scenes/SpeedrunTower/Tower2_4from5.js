@@ -153,7 +153,55 @@ export default class SpeedrunTower2_4from5 extends Phaser.Scene
         } )
         
         this.player.play('idle',true)
+
+        // TIMER
+
+        this.timerText = this.add.text(100, 300, "", { font: "30px Garamond", fill: 'white' })
+        this.timerOn = true;
+        this.currentMins = 0;
+        this.currentSecs = 0;
+        this.minsDisplay = "";
+        this.secsDisplay = "";
+        this.overallDisplay = "";
+
+
+        this.time.addEvent({
+            delay: 1000,
+            callback: this.timerFunc,
+            callbackScope: this,
+            loop: true
+        });
+
     }
+
+
+    timerFunc(){
+
+        if (this.timerOn){
+
+            if (this.currentSecs == 59){
+                this.currentSecs = 0;
+                this.currentMins++;
+            } else {
+                this.currentSecs++;
+            }
+
+            if (this.currentSecs < 10){
+                this.secsDisplay = "0" + String(this.currentSecs);
+            } else {
+                this.secsDisplay = "" + String(this.currentSecs);
+            }
+
+            this.minsDisplay = "" + String(this.currentMins);
+
+            this.overallDisplay = String(this.minsDisplay) + ":" + String(this.secsDisplay);
+
+            this.timerText.setText(this.overallDisplay);
+
+        }
+
+    }
+
 
     update() {
         let character = this.player.body
@@ -180,18 +228,23 @@ export default class SpeedrunTower2_4from5 extends Phaser.Scene
         }
 
         if (character.x > 785 && character.y > 250) {
+            localStorage.setItem(24, this.overallDisplay);
             this.scene.start("speedruntower3")
         }
         if (character.x > 785 && character.y < 250) {
+            localStorage.setItem(25, this.overallDisplay);
             this.scene.start("speedruntower3from4")
         }
         if (character.y < 20) {
+            localStorage.setItem(26, this.overallDisplay);
             this.scene.start("speedruntower5")
         }
         if (character.y > 480 && character.x > 400) {
+            localStorage.setItem(27, this.overallDisplay);
             this.scene.start("speedruntower1from2")
         }
         if (character.y > 480 && character.x <= 400) {
+            localStorage.setItem(28, this.overallDisplay);
             this.scene.start("speedruntower1from4")
         }
     }
