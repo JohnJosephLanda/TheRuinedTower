@@ -77,7 +77,7 @@ export default class SpeedrunEnd extends Phaser.Scene
         let totalMins = localStorage.getItem("m");
         let totalSecs = localStorage.getItem("s");
 
-        localStorage.clear();
+        // localStorage.clear();
 
         totalMins += Math.trunc(totalSecs / 60);
         totalSecs = totalSecs % 60;

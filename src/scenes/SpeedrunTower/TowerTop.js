@@ -171,25 +171,23 @@ export default class SpeedrunTowerTop extends Phaser.Scene
         }
 
         if (character.x < 5) {
-
             let mins = localStorage.getItem("m")
-            mins += this.currentMins;
+            mins = (this.currentMins+Number(mins))+"";
             localStorage.setItem("m", mins);
             
             let secs = localStorage.getItem("s")
-            secs += this.currentSecs;
+            secs = (this.currentSecs+Number(secs))+"";
             localStorage.setItem("s", secs);
 
             this.scene.start("speedruntower5fromtop")
         }
         if (character.y < 20) {
-
             let mins = localStorage.getItem("m")
-            mins += this.currentMins;
+            mins = (this.currentMins+Number(mins))+"";
             localStorage.setItem("m", mins);
-
+            
             let secs = localStorage.getItem("s")
-            secs += this.currentSecs;
+            secs = (this.currentSecs+Number(secs))+"";
             localStorage.setItem("s", secs);
 
             this.scene.start("speedrunendingPoint")

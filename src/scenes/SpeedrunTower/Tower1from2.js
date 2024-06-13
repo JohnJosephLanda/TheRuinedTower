@@ -202,24 +202,22 @@ export default class SpeedrunTower1from2 extends Phaser.Scene
         }
 
         if (character.x > 785) {
-
             let mins = localStorage.getItem("m")
-            mins += this.currentMins;
+            mins = (this.currentMins+Number(mins))+"";
             localStorage.setItem("m", mins);
             
             let secs = localStorage.getItem("s")
-            secs += this.currentSecs;
+            secs = (this.currentSecs+Number(secs))+"";
             localStorage.setItem("s", secs);
             this.scene.start("speedrunstartingPointfrom1")
         }
         if (character.y < 5) {
-
             let mins = localStorage.getItem("m")
-            mins += this.currentMins;
+            mins = (this.currentMins+Number(mins))+"";
             localStorage.setItem("m", mins);
             
             let secs = localStorage.getItem("s")
-            secs += this.currentSecs;
+            secs = (this.currentSecs+Number(secs))+"";
             localStorage.setItem("s", secs);
             this.scene.start("speedruntower2_4")
         }

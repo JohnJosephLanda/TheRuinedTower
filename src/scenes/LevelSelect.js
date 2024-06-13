@@ -14,7 +14,7 @@ export default class TitleScreen extends Phaser.Scene {
         const title = this.add.text(400, 150, "The Ruined Tower", { font: "80px Garamond",fill: 'white' })
         title.setOrigin(.5,.5)
 
-        const controls = this.add.text(400, 200, "Controls: arrow keys for movement, esc to pause", { font: "20px Garamond",fill: 'white', style:'italic' })
+        const controls = this.add.text(400, 200, "Controls: arrow keys for movement, top left button to pause", { font: "20px Garamond",fill: 'white', style:'italic' })
         controls.setOrigin(.5,.5)
 
         this.easy = this.add.text(150, 250, 'Easy', { font: "40px Garamond",fill: '#AAABAF', backgroundColor: '#484849', fixedHeight: '40', fixedWidth: '100', align: 'center' })
