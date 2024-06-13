@@ -79,7 +79,7 @@ export default class SpeedrunEnd extends Phaser.Scene
 
         localStorage.clear();
 
-        totalMins += totalSecs / 60;
+        totalMins += Math.trunc(totalSecs / 60);
         totalSecs = totalSecs % 60;
 
         const text = this.add.text(100, 20, "Congratulations.", { font: "50px Garamond",fill: 'white' })
@@ -91,6 +91,9 @@ export default class SpeedrunEnd extends Phaser.Scene
         this.cursors = this.input.keyboard.createCursorKeys()
         
         this.player.play('idle',true)
+
+        localStorage.setItem('m',0)
+        localStorage.setItem('s',0)
     }
 
     update() {
