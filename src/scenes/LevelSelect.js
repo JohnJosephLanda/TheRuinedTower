@@ -40,6 +40,12 @@ export default class TitleScreen extends Phaser.Scene {
         .on('pointerdown', () => this.scene.start("practice") )
         .on('pointerover', () => this.enterButtonHoverState(this.practice) )
         .on('pointerout', () => this.enterButtonRestState(this.practice) )
+        
+        this.speedrun = this.add.text(435, 325, 'Speedrun', { font: "40px Garamond",fill: '#AAABAF',style:"italic", backgroundColor: '#484849', fixedHeight: '40', fixedWidth: '170', align: 'center' })
+        .setInteractive()
+        .on('pointerdown', () => this.scene.start("speedrunstartingPoint") )
+        .on('pointerover', () => this.enterButtonHoverState(this.speedrun) )
+        .on('pointerout', () => this.enterButtonRestState(this.speedrun) )
     }
 
     enterButtonHoverState(btn) {
