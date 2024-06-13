@@ -100,11 +100,11 @@ export default class IceTower2_4from5 extends Phaser.Scene
         this.physics.add.existing(this.ninthPlat, true)
         this.physics.add.collider(this.ninthPlat, this.player)
 
-        this.tenthPlat = this.add.rectangle(320,150,50,10,this.blockColor)
+        this.tenthPlat = this.add.rectangle(320,150,80,10,this.blockColor)
         this.physics.add.existing(this.tenthPlat, true)
         this.physics.add.collider(this.tenthPlat, this.player)
         
-        this.eleventhPlat = this.add.rectangle(540,100,20,10,this.blockColor)
+        this.eleventhPlat = this.add.rectangle(540,100,50,10,this.blockColor)
         this.physics.add.existing(this.eleventhPlat, true)
         this.physics.add.collider(this.eleventhPlat, this.player)
         
