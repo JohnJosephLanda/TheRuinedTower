@@ -17,7 +17,9 @@ export default class SpeedrunStartfrom1 extends Phaser.Scene
     {
 
         var audio = new Audio("./media/bigBadGuyHere.wav");
+        audio.loop = true;
         audio.play();
+    
 
         // working on adding the player
         this.width = this.cameras.main.width

@@ -133,7 +133,7 @@ export default class SpeedrunTower1 extends Phaser.Scene
 
         // TIMER
 
-        this.timerText = this.add.text(100, 300, "", { font: "30px Garamond", fill: 'white' })
+        this.timerText = this.add.text(25, 50, "", { font: "30px Garamond", fill: 'white' })
         this.timerOn = true;
         this.currentMins = 0;
         this.currentSecs = 0;
