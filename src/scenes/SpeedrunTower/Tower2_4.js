@@ -160,7 +160,7 @@ export default class SpeedrunTower2_4 extends Phaser.Scene
 
         // TIMER
 
-        this.timerText = this.add.text(25, 50, "", { font: "30px Garamond", fill: 'white' })
+        this.timerText = this.add.text(25, 50, "0:00", { font: "30px Garamond", fill: 'white' })
         this.timerOn = true;
         this.currentMins = 0;
         this.currentSecs = 0;
@@ -231,23 +231,58 @@ export default class SpeedrunTower2_4 extends Phaser.Scene
         }
 
         if (character.x > 785 && character.y > 250) {
-            localStorage.setItem(3, this.overallDisplay);
+
+            let mins = localStorage.getItem("m")
+            mins += this.currentMins;
+            localStorage.setItem("m", mins);
+            
+            let secs = localStorage.getItem("s")
+            secs += this.currentSecs;
+            localStorage.setItem("s", secs);
             this.scene.start("speedruntower3")
         }
         if (character.x > 785 && character.y < 250) {
-            localStorage.setItem(4, this.overallDisplay);
+
+            let mins = localStorage.getItem("m")
+            mins += this.currentMins;
+            localStorage.setItem("m", mins);
+            
+            let secs = localStorage.getItem("s")
+            secs += this.currentSecs;
+            localStorage.setItem("s", secs);
             this.scene.start("speedruntower3from4")
         }
         if (character.y < 20) {
-            localStorage.setItem(5, this.overallDisplay);
+
+            let mins = localStorage.getItem("m")
+            mins += this.currentMins;
+            localStorage.setItem("m", mins);
+            
+            let secs = localStorage.getItem("s")
+            secs += this.currentSecs;
+            localStorage.setItem("s", secs);
             this.scene.start("speedruntower5")
         }
         if (character.y > 480 && character.x > 400) {
-            localStorage.setItem(6, this.overallDisplay);
+
+            let mins = localStorage.getItem("m")
+            mins += this.currentMins;
+            localStorage.setItem("m", mins);
+            
+            let secs = localStorage.getItem("s")
+            secs += this.currentSecs;
+            localStorage.setItem("s", secs);
             this.scene.start("speedruntower1from2")
         }
         if (character.y > 480 && character.x <= 400) {
-            localStorage.setItem(7, this.overallDisplay);
+
+            let mins = localStorage.getItem("m")
+            mins += this.currentMins;
+            localStorage.setItem("m", mins);
+            
+            let secs = localStorage.getItem("s")
+            secs += this.currentSecs;
+            localStorage.setItem("s", secs);
             this.scene.start("speedruntower1from4")
         }
     }

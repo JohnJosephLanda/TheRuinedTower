@@ -169,7 +169,7 @@ export default class SpeedrunTower5 extends Phaser.Scene
 
         // TIMER
 
-        this.timerText = this.add.text(25, 50, "", { font: "30px Garamond", fill: 'white' })
+        this.timerText = this.add.text(25, 50, "0:00", { font: "30px Garamond", fill: 'white' })
         this.timerOn = true;
         this.currentMins = 0;
         this.currentSecs = 0;
@@ -240,15 +240,36 @@ export default class SpeedrunTower5 extends Phaser.Scene
         }
 
         if (character.x > 785) {
-            localStorage.setItem(11, this.overallDisplay);
+
+            let mins = localStorage.getItem("m")
+            mins += this.currentMins;
+            localStorage.setItem("m", mins);
+            
+            let secs = localStorage.getItem("s")
+            secs += this.currentSecs;
+            localStorage.setItem("s", secs);
             this.scene.start("speedruntowertop")
         }
         if (character.y > 480 & character.x > 575) {
-            localStorage.setItem(12, this.overallDisplay);
+
+            let mins = localStorage.getItem("m")
+            mins += this.currentMins;
+            localStorage.setItem("m", mins);
+            
+            let secs = localStorage.getItem("s")
+            secs += this.currentSecs;
+            localStorage.setItem("s", secs);
             this.scene.start("speedruntower2_4from3")
         }
         else if (character.y > 480) {
-            localStorage.setItem(13, this.overallDisplay);
+
+            let mins = localStorage.getItem("m")
+            mins += this.currentMins;
+            localStorage.setItem("m", mins);
+            
+            let secs = localStorage.getItem("s")
+            secs += this.currentSecs;
+            localStorage.setItem("s", secs);
             this.scene.start("speedruntower2_4from5")
         }
     }

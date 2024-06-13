@@ -168,4 +168,6 @@ game.scene.add("speedruntowertop",SpeedrunTowerTop)
 game.scene.add("speedrunendingPoint",SpeedrunEnd)
 
 // game.scene.start("titlescreen");
-game.scene.start("speedruntowertop"); // temp to work on level
+// game.scene.start("speedruntowertop"); // temp to work on level
+// game.scene.start("speedruntowertop");
+game.scene.start("speedruntower5");

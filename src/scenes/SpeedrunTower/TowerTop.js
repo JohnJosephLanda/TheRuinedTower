@@ -81,7 +81,7 @@ export default class SpeedrunTowerTop extends Phaser.Scene
         this.physics.add.collider(this.fourthPlat, this.player)
         
         this.cursors = this.input.keyboard.createCursorKeys()
-        this.pauseButton = this.add.text(0, 10, '▐▐', { font: "30px Garamond",fill: '585859',style:"italic", fixedHeight: '35', fixedWidth: '80', align: 'center' })
+        this.pauseButton = this.add.text(0, 10, '▐▐', { font: "30px Garamond",fill: 'white',style:"italic", fixedHeight: '35', fixedWidth: '80', align: 'center' })
         .setInteractive()
         .on('pointerdown', () => { 
             let paused = true
@@ -96,7 +96,7 @@ export default class SpeedrunTowerTop extends Phaser.Scene
 
         // TIMER
 
-        this.timerText = this.add.text(25, 50, "", { font: "30px Garamond", fill: 'white' })
+        this.timerText = this.add.text(25, 50, "0:00", { font: "30px Garamond", fill: 'white' })
         this.timerOn = true;
         this.currentMins = 0;
         this.currentSecs = 0;
@@ -138,6 +138,8 @@ export default class SpeedrunTowerTop extends Phaser.Scene
 
             this.timerText.setText(this.overallDisplay);
 
+            
+
         }
 
     }
@@ -169,10 +171,27 @@ export default class SpeedrunTowerTop extends Phaser.Scene
         }
 
         if (character.x < 5) {
-            localStorage.setItem(14, this.overallDisplay);
+
+            let mins = localStorage.getItem("m")
+            mins += this.currentMins;
+            localStorage.setItem("m", mins);
+            
+            let secs = localStorage.getItem("s")
+            secs += this.currentSecs;
+            localStorage.setItem("s", secs);
+
             this.scene.start("speedruntower5fromtop")
         }
         if (character.y < 20) {
+
+            let mins = localStorage.getItem("m")
+            mins += this.currentMins;
+            localStorage.setItem("m", mins);
+
+            let secs = localStorage.getItem("s")
+            secs += this.currentSecs;
+            localStorage.setItem("s", secs);
+
             this.scene.start("speedrunendingPoint")
         }
     }

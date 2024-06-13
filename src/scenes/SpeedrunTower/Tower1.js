@@ -133,7 +133,7 @@ export default class SpeedrunTower1 extends Phaser.Scene
 
         // TIMER
 
-        this.timerText = this.add.text(25, 50, "", { font: "30px Garamond", fill: 'white' })
+        this.timerText = this.add.text(25, 50, "0:00", { font: "30px Garamond", fill: 'white' })
         this.timerOn = true;
         this.currentMins = 0;
         this.currentSecs = 0;
@@ -205,12 +205,29 @@ export default class SpeedrunTower1 extends Phaser.Scene
             this.player.play('jump',true)
         }
 
+
         if (character.x > 785) {
-            localStorage.setItem(0, this.overallDisplay);
+            
+            let mins = localStorage.getItem("m")
+            mins += this.currentMins;
+            localStorage.setItem("m", mins);
+            
+            let secs = localStorage.getItem("s")
+            secs += this.currentSecs;
+            localStorage.setItem("s", secs);
+
             this.scene.start("speedrunstartingPointfrom1")
         }
         if (character.y < 5) {
-            localStorage.setItem(1, this.overallDisplay);
+
+            let mins = localStorage.getItem("m")
+            mins += this.currentMins;
+            localStorage.setItem("m", mins);
+            
+            let secs = localStorage.getItem("s")
+            secs += this.currentSecs;
+            localStorage.setItem("s", secs);
+
             this.scene.start("speedruntower2_4")
         }
     }

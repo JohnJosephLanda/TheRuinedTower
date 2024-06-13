@@ -15,6 +15,10 @@ export default class SpeedrunStart extends Phaser.Scene
 
     create()
     {
+
+        localStorage.setItem("m", 0);
+        localStorage.setItem("s", 0);
+
        this.width = this.cameras.main.width
         this.height = this.cameras.main.height
 
