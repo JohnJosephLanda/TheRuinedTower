@@ -6,7 +6,6 @@ export default class Time {
     }
 
     sumofLst(){
-        
         for (let i = 0; i < localStorage.length; i++){
             if (localStorage.getItem(i) != null){
                 let mins = localStorage.getItem(i).split(":")[0];
@@ -35,7 +34,6 @@ export default class Time {
         totalSecs = totalSecs % 60;
 
         return [String(totalMins), String(totalSecs)];
-
     }
 
     
