@@ -19,7 +19,7 @@ export default class TitleScreen extends Phaser.Scene {
 
         this.easy = this.add.text(150, 250, 'Easy', { font: "40px Garamond",fill: '#AAABAF', backgroundColor: '#484849', fixedHeight: '40', fixedWidth: '100', align: 'center' })
         .setInteractive()
-        .on('pointerdown', () => this.scene.start("startingPoint") )
+        .on('pointerdown', () => this.scene.start("easystartingPoint") )
         .on('pointerover', () => this.enterButtonHoverState(this.easy) )
         .on('pointerout', () => this.enterButtonRestState(this.easy) )
 
@@ -31,9 +31,15 @@ export default class TitleScreen extends Phaser.Scene {
 
         this.ice = this.add.text(550, 250, 'Ice', { font: "40px Garamond",fill: '#AAABAF',style:"italic", backgroundColor: '#484849', fixedHeight: '40', fixedWidth: '100', align: 'center' })
         .setInteractive()
-        .on('pointerdown', () => this.scene.start("startingPoint") )
+        .on('pointerdown', () => this.scene.start("icestartingPoint") )
         .on('pointerover', () => this.enterButtonHoverState(this.ice) )
         .on('pointerout', () => this.enterButtonRestState(this.ice) )
+
+        this.practice = this.add.text(225, 325, 'Practice', { font: "40px Garamond",fill: '#AAABAF',style:"italic", backgroundColor: '#484849', fixedHeight: '40', fixedWidth: '140', align: 'center' })
+        .setInteractive()
+        .on('pointerdown', () => this.scene.start("practice") )
+        .on('pointerover', () => this.enterButtonHoverState(this.practice) )
+        .on('pointerout', () => this.enterButtonRestState(this.practice) )
     }
 
     enterButtonHoverState(btn) {
