@@ -3,6 +3,7 @@ import Phaser from "phaser"
 import Player from "../../sprites/Player.js"
 import player from "../../sprites/PlayerStylesheet.png"
 import bg0 from "../../media/skybg.png" 
+import Timer from "../Time.js";
 
 export default class Tower1 extends Phaser.Scene
 {
@@ -15,6 +16,7 @@ export default class Tower1 extends Phaser.Scene
 
     create()
     {
+
         this.width = this.cameras.main.width
         this.height = this.cameras.main.height
 
@@ -128,7 +130,10 @@ export default class Tower1 extends Phaser.Scene
         } )
         
         this.player.play('idle',true)
+
     }
+
+
 
     update() {
         let character = this.player.body
@@ -161,4 +166,5 @@ export default class Tower1 extends Phaser.Scene
             this.scene.start("tower2_4")
         }
     }
+
 }
