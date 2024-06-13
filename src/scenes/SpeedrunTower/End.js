@@ -74,11 +74,13 @@ export default class SpeedrunEnd extends Phaser.Scene
         this.physics.add.existing(this.endPlat, true)
         this.physics.add.collider(this.endPlat, this.player)
 
+        let mins = timer.sumofLst()[0], secs = timer.sumofLst()[1]
+
         const text = this.add.text(100, 20, "Congratulations.", { font: "50px Garamond",fill: 'white' })
         const text2 = this.add.text(300, 250, "You have beaten the tower.", { font: "30px Garamond",fill: 'white' })
-        const text3 = this.add.text(300, 250, "You took " + timer.sumofLst()[0] + " minutes, and " + timer.sumofLst()[1] + " seconds.", { font: "30px Garamond",fill: 'white' })
-        const text4 = this.add.text(300, 250, "Can you do better?", { font: "12px Garamond",fill: 'white' })
-        const text5 = this.add.text(300, 350, "Jump off to restart or play another tower.", { font: "20px Garamond",fill: 'white' })
+        const text3 = this.add.text(300, 300, "You took " + mins + " minutes, and " + secs + " seconds.", { font: "20px Garamond",fill: 'white' })
+        const text4 = this.add.text(300, 340, "Can you do better?", { font: "17px Garamond",fill: 'white' })
+        const text5 = this.add.text(300, 380, "Jump off to restart or play another tower.", { font: "20px Garamond",fill: 'white' })
 
         this.cursors = this.input.keyboard.createCursorKeys()
         
