@@ -167,5 +167,4 @@ game.scene.add("speedruntower5fromtop",SpeedrunTower5fromTop)
 game.scene.add("speedruntowertop",SpeedrunTowerTop)
 game.scene.add("speedrunendingPoint",SpeedrunEnd)
 
-// game.scene.start("titlescreen");
-game.scene.start("icetower5fromtop"); // temp
+game.scene.start("titlescreen");
