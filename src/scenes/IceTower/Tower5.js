@@ -71,9 +71,9 @@ export default class IceTower5 extends Phaser.Scene
         this.physics.add.existing(this.secondPlat, true)
         this.physics.add.collider(this.secondPlat, this.player)
         
-        this.thirdPlat = this.add.rectangle(115,365,30,10,this.blockColor)
-        this.physics.add.existing(this.thirdPlat, true)
-        this.physics.add.collider(this.thirdPlat, this.player)
+        // this.thirdPlat = this.add.rectangle(115,365,30,10,this.blockColor)
+        // this.physics.add.existing(this.thirdPlat, true)
+        // this.physics.add.collider(this.thirdPlat, this.player)
         
         this.fourthPlat = this.add.rectangle(200,365,50,10,this.blockColor)
         this.physics.add.existing(this.fourthPlat, true)
@@ -99,7 +99,7 @@ export default class IceTower5 extends Phaser.Scene
         this.physics.add.existing(this.ninthPlat, true)
         this.physics.add.collider(this.ninthPlat, this.player)
         
-        this.tenthPlat = this.add.rectangle(738,350,40,10,this.blockColor)
+        this.tenthPlat = this.add.rectangle(740,350,30,10,this.blockColor)
         this.physics.add.existing(this.tenthPlat, true)
         this.physics.add.collider(this.tenthPlat, this.player)
         
@@ -107,7 +107,7 @@ export default class IceTower5 extends Phaser.Scene
         this.physics.add.existing(this.eleventhPlat, true)
         this.physics.add.collider(this.eleventhPlat, this.player)
         
-        this.twelfthPlat = this.add.rectangle(703,270,40,10,this.blockColor)
+        this.twelfthPlat = this.add.rectangle(700,270,30,10,this.blockColor)
         this.physics.add.existing(this.twelfthPlat, true)
         this.physics.add.collider(this.twelfthPlat, this.player)
         
@@ -127,7 +127,7 @@ export default class IceTower5 extends Phaser.Scene
         this.physics.add.existing(this.sixteenthPlat, true)
         this.physics.add.collider(this.sixteenthPlat, this.player)
         
-        this.seventeenthPlat = this.add.rectangle(300,180,60,30,this.blockColor)
+        this.seventeenthPlat = this.add.rectangle(300,180,90,30,this.blockColor)
         this.physics.add.existing(this.seventeenthPlat, true)
         this.physics.add.collider(this.seventeenthPlat, this.player)
         
